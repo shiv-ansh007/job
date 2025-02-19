@@ -1,16 +1,16 @@
-"use client";
-import Link from "next/link";
+ "use client";
 import { useState, useEffect } from "react";
-import Profile from "../components/Profile"; // Ensure correct path
-import PropTypes from "prop-types";
+import Link from "next/link";
 import { auth } from "../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import AuthModal from "../components/AuthModal"; // Ensure correct path
+import AuthModal from "../components/AuthModal";
+import PropTypes from "prop-types";
 
-const Navbar = () => {
-  const [showProfile, setShowProfile] = useState(false);
+const Navbar = ({ showProfile, setShowProfile }) => {
   const [user, setUser] = useState(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -21,118 +21,110 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await signOut(auth);
+    setIsProfileOpen(false);
   };
 
   return (
     <>
-      <nav className="flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
-        <div className="flex w-full flex-wrap items-center justify-between px-3">
-          {/* Mobile Menu Button */}
-          <button
-            className="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
-            type="button"
-            aria-label="Toggle navigation"
-          >
-            <span className="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  fillRule="evenodd"
-                  d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-
-          {/* Brand Logo */}
-          <Link href="/" className="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 lg:mb-0 lg:mt-0">
-            <img
-              src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp"
-              style={{ height: "15px" }}
-              alt="TE Logo"
-              loading="lazy"
+      <nav className="flex justify-between items-center bg-gray-100 p-4 shadow-md">
+        {/* ✅ Mobile Menu Button */}
+        <button
+          className="lg:hidden border-0 bg-transparent px-2 text-black/50 dark:text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7">
+            <path
+              fillRule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+              clipRule="evenodd"
             />
-          </Link>
+          </svg>
+        </button>
 
-          {/* Navbar Links */}
-          <ul className="list-style-none me-auto flex flex-col ps-0 lg:flex-row">
-            <li className="mb-4 lg:mb-0 lg:pe-2">
-              <Link href="/dashboard" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
-                Home
-              </Link>
-            </li>
-            <li className="mb-4 lg:mb-0 lg:pe-2">
-              <a href="#jobs" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
-                Jobs
-              </a>
-            </li>
-            <li className="mb-4 lg:mb-0 lg:pe-2">
-              <Link href="/projects" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
-                Internships
-              </Link>
-            </li>
-            <li className="mb-4 lg:mb-0 lg:pe-2">
-              <Link href="/mentorship" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
-                Mentorship & Counseling
-              </Link>
-            </li>
-          </ul>
+        {/* ✅ Brand Logo */}
+        <Link href="/" className="flex items-center text-xl font-bold">
+          <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" className="h-8" alt="TE Logo" />
+        </Link>
 
-          {/* Right Icons */}
-          <div className="relative flex items-center space-x-4">
-            {/* Authentication Section */}
-            {user ? (
-              <div className="relative">
-                <button onClick={() => setShowProfile(!showProfile)} className="flex items-center">
-                  <img
-                    src={user.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.jpg"}
-                    className="rounded-full"
-                    style={{ height: "25px", width: "25px" }}
-                    alt="Profile"
-                    loading="lazy"
-                  />
-                </button>
+        {/* ✅ Navbar Links */}
+        <ul
+          className={`lg:flex lg:space-x-6 absolute lg:static bg-gray-100 w-full lg:w-auto top-14 left-0 lg:flex-row flex-col shadow-md lg:shadow-none ${
+            isMobileMenuOpen ? "flex" : "hidden"
+          }`}
+        >
+          <li>
+            <Link href="/dashboard" className="block px-4 py-2 text-black/60 hover:text-black">
+              Home
+            </Link>
+          </li>
+          <li>
+            <a href="#jobs" className="block px-4 py-2 text-black/60 hover:text-black">
+              Jobs
+            </a>
+          </li>
+          <li>
+            <Link href="/projects" className="block px-4 py-2 text-black/60 hover:text-black">
+              Internships
+            </Link>
+          </li>
+          <li>
+            <Link href="/mentorship" className="block px-4 py-2 text-black/60 hover:text-black">
+              Mentorship & Counseling
+            </Link>
+          </li>
+        </ul>
 
-                {/* Profile Dropdown */}
-                {showProfile && (
-                  <ul className="absolute min-w-max list-none bg-white shadow-lg dark:bg-surface-dark">
-                    <li>
-                      <Link href="/profile" className="block px-4 py-2 text-sm text-neutral-700 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800">
-                        Profile
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/settings" className="block px-4 py-2 text-sm text-neutral-700 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800">
-                        Settings
-                      </Link>
-                    </li>
-                    <li>
-                      <button
-                        onClick={handleLogout}
-                        className="block w-full px-4 py-2 text-sm text-neutral-700 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800"
-                      >
-                        Logout
-                      </button>
-                    </li>
-                  </ul>
-                )}
-              </div>
-            ) : (
-              <button onClick={() => setIsAuthModalOpen(true)} className="px-4 py-2 bg-blue-600 text-white rounded-md transition hover:bg-blue-700">
-                Sign In / Register
+        {/* ✅ Right Icons */}
+        <div className="relative flex items-center space-x-4">
+          {user ? (
+            <div className="relative">
+              {/* Profile Image & Toggle Dropdown */}
+              <button onClick={() => setIsProfileOpen(!isProfileOpen)} className="flex items-center">
+                <img
+                  src={user.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.jpg"}
+                  className="rounded-full w-8 h-8"
+                  alt="Profile"
+                />
               </button>
-            )}
-          </div>
+
+              {/* Profile Dropdown Menu */}
+              {isProfileOpen && (
+                <ul className="absolute right-0 bg-white shadow-md rounded-md w-40 mt-2">
+                  <li onClick={() => setShowProfile(true)}>
+                    <Link href="" className="block px-4 py-2 hover:bg-gray-200">
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/settings" className="block px-4 py-2 hover:bg-gray-200">
+                      Settings
+                    </Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogout} className="block w-full px-4 py-2 hover:bg-gray-200 text-left">
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              )}
+            </div>
+          ) : (
+            <button onClick={() => setIsAuthModalOpen(true)} className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              Sign In / Register
+            </button>
+          )}
         </div>
       </nav>
 
-      {/* Include AuthModal */}
+      {/* ✅ Authentication Modal */}
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
-      
-      {/* Show Profile Modal if Triggered */}
-      {showProfile && <Profile setShowProfile={setShowProfile} />}
     </>
   );
+};
+
+Navbar.propTypes = {
+  setShowProfile: PropTypes.func.isRequired,
+  showProfile: PropTypes.bool.isRequired,
 };
 
 export default Navbar;
