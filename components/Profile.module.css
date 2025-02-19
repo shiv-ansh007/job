@@ -1,0 +1,59 @@
+ /* Profile.module.css */
+
+/* Fullscreen overlay effect */
+.profileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+  backdrop-filter: blur(10px); /* Blurs background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensures it stays on top */
+}
+
+/* Profile Card */
+.profileContainer {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Close button */
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.closeButton:hover {
+  background: darkred;
+}
