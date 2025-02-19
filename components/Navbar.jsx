@@ -1,7 +1,12 @@
+'use client';
 import Link from "next/link";
+import { useState } from "react";
+import Profile from "./Profile";
+import PropTypes from "prop-types";
 
 
 const Navbar = () => {
+  const [showProfile, setShowProfile] = useState(false);
   return (
     <>
 
@@ -54,12 +59,12 @@ const Navbar = () => {
               </a>
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
-              <Link href="/projects" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
+              <Link href="#internships" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
                 Internships
               </Link>
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
-              <Link href="/mentorship" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
+              <Link href="#mentorship" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
                 Mentorship & Counseling
               </Link>
             </li>
@@ -87,7 +92,7 @@ const Navbar = () => {
 
             {/* Profile Dropdown */}
             <div className="relative">
-              <button className="flex items-center">
+              <button onClick={() => setShowProfile(false)} className="flex items-center">
                 <img
                   src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
                   className="rounded-full"
@@ -96,6 +101,7 @@ const Navbar = () => {
                   loading="lazy"
                 />
               </button>
+              
               {/* Dropdown content */}
               <ul className="absolute hidden min-w-max list-none bg-white shadow-lg dark:bg-surface-dark">
                 <li>
@@ -125,10 +131,15 @@ const Navbar = () => {
   
   
 </nav>
- 
+   {/* Show Profile Modal if Triggered */}
+    {showProfile && <Profile setShowProfile={setShowProfile} />}  
  
     </>
   );
+};
+
+Navbar.propTypes = {
+  setShowProfile: PropTypes.func.isRequired
 };
 
 export default Navbar;
