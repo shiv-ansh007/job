@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
      <Jobs/>
      <Internships/>
      <Mentorship/>
-     <Profile/>
+     
     </AuthProvider>
 
   );

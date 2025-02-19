@@ -11,6 +11,7 @@ const AuthModal = ({ isOpen, onClose }) => {
   const handleAuth = async () => {
     try {
       setError("");
+      let userCredential;
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
       } else {
