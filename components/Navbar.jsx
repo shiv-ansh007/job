@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 const Navbar = () => {
   return (
     <>
@@ -44,9 +45,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
-              <Link href="/team" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
+              <a href="#jobs" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
                 Jobs
-              </Link>
+              </a>
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
               <Link href="/projects" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
@@ -76,7 +77,7 @@ const Navbar = () => {
             </Link>
             <div className="relative flex items-center">
             <Link href="/signin" className="px-4 py-2 bg-blue-600 text-white rounded-md transition hover:bg-blue-700">
-              Sign In / Register
+              Sign In / Register 
             </Link>
           </div>
 
