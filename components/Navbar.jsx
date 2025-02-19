@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
  import Profile from './Profile'
@@ -8,6 +8,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import AuthModal from "../components/AuthModal"; // Import the modal
 
 const Navbar = () => {
+  
   const [showProfile,setShowProfile] =useState(false);
   const [user, setUser] = useState(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false); // State for modal
@@ -22,6 +23,9 @@ const Navbar = () => {
   const handleLogout = async () => {
     await signOut(auth);
   };
+
+=======
+
 
   return (
     <>
@@ -90,6 +94,8 @@ const Navbar = () => {
           </Link>
 
 
+       
+
           {/* Authentication Section */}
           <div className="relative flex items-center space-x-4">
             {user ? (
@@ -104,10 +110,12 @@ const Navbar = () => {
                   />
                 </button>
 
+
                 {/* Profile Dropdown*/}
                 <div className="relative">
                   <button  onClick={()=>setShowProfile(false)} className="flex items-center">
                   <img
+
                   src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
                   className="rounded-full"
                   style={{ height: "25px", width: "25px" }}
@@ -117,6 +125,9 @@ const Navbar = () => {
              
                   </button>
                   </div>
+               
+              
+        
               {/* Dropdown content */}
               <ul className="absolute min-w-max list-none bg-white shadow-lg dark:bg-surface-dark">
                 <li>
@@ -142,11 +153,10 @@ const Navbar = () => {
           </button>
           )}
         </div>
+
       </div>
       </div>
     </nav>
-      {/* Show Profile Modal if Triggered */}
-    {showProfile && <Profile setShowProfile={setShowProfile} />}  
  
     
   
@@ -163,4 +173,9 @@ const Navbar = () => {
 Navbar.propTypes = {
   setShowProfile: PropTypes.func.isRequired
 };
-export default Navbar;
+=======
+     
+          
+        
+ 
+  
