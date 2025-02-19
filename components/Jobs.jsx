@@ -14,6 +14,7 @@ const Jobs = () => {
 
   return (
     <div>
+      <h1>hello</h1>
       
       <section  id= 'jobs'className="p-10">
         <h1 className="text-3xl font-bold text-center">Job Listings</h1>
