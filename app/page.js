@@ -1,6 +1,6 @@
+
 import Navbar from "@/components/Navbar";
- 
-import Jobs from "@/components/Jobs";
+ import Jobs from "@/components/Jobs";
 import LandingPage from "@/components/LandingPage";
  
  
@@ -12,7 +12,8 @@ export default function Home() {
      <Navbar/>     
       <LandingPage/>
      <Jobs/>
-      
+
+     
       
      </>
   );
