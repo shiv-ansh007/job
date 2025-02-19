@@ -1,12 +1,14 @@
 "use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+ import Profile from './Profile'
+ import  prototype  from "prop-types";
 import { auth } from "../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import AuthModal from "../components/AuthModal"; // Import the modal
 
 const Navbar = () => {
+  const [showProfile,setShowProfile] =useState(false);
   const [user, setUser] = useState(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false); // State for modal
 
@@ -87,6 +89,7 @@ const Navbar = () => {
             </span>
           </Link>
 
+
           {/* Authentication Section */}
           <div className="relative flex items-center space-x-4">
             {user ? (
@@ -100,6 +103,20 @@ const Navbar = () => {
                     loading="lazy"
                   />
                 </button>
+
+                {/* Profile Dropdown*/}
+                <div className="relative">
+                  <button  onClick={()=>setShowProfile(false)} className="flex items-center">
+                  <img
+                  src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
+                  className="rounded-full"
+                  style={{ height: "25px", width: "25px" }}
+                  alt="Profile"
+                  loading="lazy"
+                />
+             
+                  </button>
+                  </div>
               {/* Dropdown content */}
               <ul className="absolute min-w-max list-none bg-white shadow-lg dark:bg-surface-dark">
                 <li>
@@ -128,10 +145,22 @@ const Navbar = () => {
       </div>
       </div>
     </nav>
+      {/* Show Profile Modal if Triggered */}
+    {showProfile && <Profile setShowProfile={setShowProfile} />}  
+ 
+    
+  
+
+
+    
      {/* Include AuthModal */}
      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
+      {/* Show Profile Model if Triggered*/}
+      {showProfile && <Profile setShowProfile={setShowProfile}/>}
     </>
   );
 };
-
+Navbar.propTypes = {
+  setShowProfile: PropTypes.func.isRequired
+};
 export default Navbar;
