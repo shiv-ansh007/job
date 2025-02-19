@@ -61,23 +61,28 @@ const Navbar = () => {
           <ul className="list-style-none me-auto flex flex-col ps-0 lg:flex-row">
             <li className="mb-4 lg:mb-0 lg:pe-2">
               <Link href="/dashboard" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
-                Dashboard
+                Home
               </Link>
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
               <Link href="/team" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
-                Team
+                Jobs
               </Link>
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
               <Link href="/projects" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
-                Projects
+                Internships
+              </Link>
+            </li>
+            <li className="mb-4 lg:mb-0 lg:pe-2">
+              <Link href="/mentorship" className="text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2">
+                Mentorship & Counseling
               </Link>
             </li>
           </ul>
 
           {/* Right Icons */}
-          <div className="relative flex items-center">
+          <div className="relative flex items-center space-x-4"> 
             {/* Cart Icon */}
             <Link href="/cart" className="me-4 text-neutral-600 dark:text-white">
               <span className="[&>svg]:w-5">
@@ -90,6 +95,11 @@ const Navbar = () => {
                 </svg>
               </span>
             </Link>
+            <div className="relative flex items-center">
+            <Link href="/signin" className="px-4 py-2 bg-blue-600 text-white rounded-md transition hover:bg-blue-700">
+              Sign In / Register
+            </Link>
+          </div>
 
             {/* Profile Dropdown */}
             <div className="relative">
