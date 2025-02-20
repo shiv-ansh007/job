@@ -73,6 +73,7 @@ const Jobs = () => {
   };
 
   return (
+  job
     <div className="p-10 text-left">
       <ToastContainer /> {/* Toast container for displaying notifications */}
 
@@ -121,6 +122,7 @@ const Jobs = () => {
             </form>
             <button onClick={closeModal} className="mt-4 text-gray-600">Cancel</button>
           </div>
+ 
         </div>
       )}
     </div>
