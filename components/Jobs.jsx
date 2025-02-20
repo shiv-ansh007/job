@@ -22,6 +22,7 @@ const Jobs = () => {
   const closeModal = () => {
     setModalIsOpen(false);
     setFormData({ fullName: "", email: "", resume: null, availability: "immediate" });
+    document.querySelector('input[type="file"]').value = "";
   };
 
   const handleInputChange = (e) => {
@@ -35,10 +36,12 @@ const Jobs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
-    data.append("jobTitle", selectedJob.title);
+    data.append("jobTitle", selectedJob?.title || "Unknown Job");
     data.append("fullName", formData.fullName);
     data.append("email", formData.email);
-    data.append("resume", formData.resume);
+    if (formData.resume) {
+      data.append("resume", formData.resume);
+    }
     data.append("availability", formData.availability);
 
     try {
@@ -46,36 +49,16 @@ const Jobs = () => {
         headers: { "Content-Type": "multipart/form-data" }
       });
 
-      toast.success(response.data.message, {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-
+      toast.success(response.data.message);
       closeModal();
     } catch (error) {
-      toast.error("Failed to submit application!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.error("Failed to submit application!");
     }
   };
 
   return (
-  job
     <div className="p-10 text-left">
-      <ToastContainer /> {/* Toast container for displaying notifications */}
+      <ToastContainer />
 
       <h1 className="text-3xl font-bold">Job Listings</h1>
 
@@ -98,11 +81,10 @@ const Jobs = () => {
         ))}
       </div>
 
-      {/* Application Modal */}
       {modalIsOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-md shadow-lg w-96">
-            <h2 className="text-xl font-semibold mb-4">Applying for {selectedJob?.title}</h2>
+            <h2 className="text-xl font-semibold mb-4">Applying for {selectedJob?.title || "Job"}</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Full Name" className="w-full p-2 border rounded" required />
               <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email" className="w-full p-2 border rounded" required />
@@ -110,11 +92,11 @@ const Jobs = () => {
               <div>
                 <label className="block">Confirm your availability:</label>
                 <label className="inline-flex items-center">
-                  <input type="radio" name="availability" value="immediate" checked={formData.availability === "immediate"} onChange={handleInputChange} className="mr-2" />
+                  <input type="radio" name="availability" value="immediate" checked={formData.availability === "immediate"} onChange={(e) => setFormData({ ...formData, availability: e.target.value })} className="mr-2" />
                   Yes, I am available immediately
                 </label>
                 <label className="inline-flex items-center ml-4">
-                  <input type="radio" name="availability" value="custom" checked={formData.availability === "custom"} onChange={handleInputChange} className="mr-2" />
+                  <input type="radio" name="availability" value="custom" checked={formData.availability === "custom"} onChange={(e) => setFormData({ ...formData, availability: e.target.value })} className="mr-2" />
                   No, I will specify availability
                 </label>
               </div>
@@ -122,7 +104,6 @@ const Jobs = () => {
             </form>
             <button onClick={closeModal} className="mt-4 text-gray-600">Cancel</button>
           </div>
- 
         </div>
       )}
     </div>
