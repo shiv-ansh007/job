@@ -57,3 +57,67 @@
 .closeButton:hover {
   background: darkred;
 }
+
+
+.profileContainer {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.profileTitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profileDetails {
+  margin-bottom: 20px;
+}
+
+.profileItem {
+  margin: 10px 0;
+}
+
+.editButton,
+.saveButton,
+.cancelButton {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.saveButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancelButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileLabel {
+  margin-bottom: 10px;
+}
+
+.profileInput {
+  padding: 8px;
+  margin-top: 5px
+}
+ 
