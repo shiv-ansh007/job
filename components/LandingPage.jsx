@@ -93,7 +93,7 @@ const Home = () => {
           )}
         </div>
         <motion.div
-          className="w-2/3 p-8 text-center bg-white rounded-l-2xl shadow-2xl"
+          className="w-2/3 p-8 text-center z-index:0 bg-white rounded-l-2xl shadow-2xl"
           animate={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
