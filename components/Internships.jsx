@@ -30,7 +30,33 @@ const Internships = () => {
       duration: "4 Months",
       description: "Develop interactive web applications and optimize UI/UX performance.",
     },
+    {
+      id: 1,
+      title: "Software Engineering Intern",
+      company: "Google",
+      location: "Mountain View, CA",
+      duration: "3 Months",
+      description: "Work with cutting-edge technologies and build scalable applications.",
+    },
+    {
+      id: 2,
+      title: "Data Science Intern",
+      company: "Microsoft",
+      location: "Redmond, WA",
+      duration: "6 Months",
+      description: "Analyze large datasets and develop machine learning models.",
+    },
+    {
+      id: 3,
+      title: "Web Developer Intern",
+      company: "Meta",
+      location: "Menlo Park, CA",
+      duration: "4 Months",
+      description: "Develop interactive web applications and optimize UI/UX performance.",
+    },
   ];
+
+  
 
   return (
     <div>
