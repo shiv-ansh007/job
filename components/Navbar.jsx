@@ -6,6 +6,8 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import AuthModal from "../components/AuthModal";
 import PropTypes from "prop-types";
 
+
+
 const Navbar = ({ showProfile, setShowProfile }) => {
   const [user, setUser] = useState(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -53,9 +55,9 @@ const Navbar = ({ showProfile, setShowProfile }) => {
           }`}
         >
           <li>
-            <Link href="/dashboard" className="block px-4 py-2 text-black/60 hover:text-black">
+            <a href="/dashboard"  className="block px-4 py-2 text-black/60 hover:text-black">
               Home
-            </Link>
+            </a>
           </li>
           <li>
             <a href="#jobs" className="block px-4 py-2 text-black/60 hover:text-black">

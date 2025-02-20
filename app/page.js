@@ -8,6 +8,7 @@ import { useState } from "react";
 import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
 
+
 export default function Home() {
   const [showProfile, setShowProfile] = useState(false);
    
