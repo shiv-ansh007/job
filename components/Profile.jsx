@@ -2,7 +2,7 @@
 import styles from "./Profile.module.css";
 import PropTypes from 'prop-types';
 
-const Profile = ({ setShowProfile }) => {
+const Profile = ({ setShowProfile ,onEdit}) => {
   const onClick = () => {
     setShowProfile((prev) => !prev); // ✅ Now it's a function
   };
@@ -19,9 +19,12 @@ const Profile = ({ setShowProfile }) => {
           <p className="text-lg"><strong>Email:</strong> johndoe@example.com</p>
           <p className="text-lg"><strong>Phone:</strong> +1 234 567 890</p>
           <p className="text-lg"><strong>Location:</strong> New York, USA</p>
-        </div>
+          </div>
+      <button className={styles.editButton} onClick={onEdit}>Edit Profile</button>
+            </div>
+        
       </div>
-    </div>
+    
   );
 };
 Profile.propTypes = {

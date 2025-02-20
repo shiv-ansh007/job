@@ -6,6 +6,7 @@ import Internships from "@/components/Internships";
 import Mentorship from "@/components/Mentorship";
 import Profile from "@/components/Profile";
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
