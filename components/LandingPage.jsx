@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { auth } from "../lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -9,6 +7,7 @@ const Home = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [expandedFeature, setExpandedFeature] = useState(null);
+  const [activeFeature, setActiveFeature] = useState(null); // State to track active feature
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -27,7 +26,6 @@ const Home = () => {
       fullDescription:
         "Our advanced AI algorithms analyze your unique skill set and career objectives to match you with the most suitable job opportunities, ensuring a perfect fit for your professional growth.",
     },
-    
     {
       title: "Internship & Training",
       shortDescription: "Secure internships and gain hands-on experience.",
@@ -58,10 +56,12 @@ const Home = () => {
       fullDescription:
         "Gain insights and guidance from seasoned professionals through our mentorship programs, helping you navigate your career path with informed decisions and expert advice.",
     },
+    // Add more features as needed
   ];
 
   const toggleFeature = (index) => {
     setExpandedFeature(expandedFeature === index ? null : index);
+    setActiveFeature(index); // Set the active feature on click
   };
 
   return (
@@ -114,11 +114,13 @@ const Home = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-4 border rounded-lg shadow-lg cursor-pointer"
+              className={`p-4 border rounded-lg shadow-lg cursor-pointer ${
+                activeFeature === index ?  'bg-yellow-500' : 'bg-blue-200'
+              }`}
               onClick={() => toggleFeature(index)}
             >
-              <h3 className="font-semibold">{feature.title}</h3>
-              <p>
+              <h3 className="font-bold text-left">{feature.title}</h3>
+              <p className="mt-2 text-left text-gray-800">
                 {expandedFeature === index
                   ? feature.fullDescription
                   : feature.shortDescription}
