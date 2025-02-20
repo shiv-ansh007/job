@@ -7,9 +7,10 @@ import Mentorship from "@/components/Mentorship";
 import { useState } from "react";
 import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/context/AuthContext";
 
 
-export default function Home() {
+export default function Home( {children}) {
   const [showProfile, setShowProfile] = useState(false);
    
   const onClick = () => {
@@ -18,13 +19,13 @@ export default function Home() {
 
   return (
     <>
+    <AuthProvider> 
       { showProfile?<Profile setShowProfile={setShowProfile}/>:<></>}
       <Navbar showProfile={showProfile} setShowProfile={setShowProfile} /> {/* ✅ Passing to Navbar */}
       <LandingPage />
-      <Jobs />
-      <Internships />
-      <Mentorship />
+      {children}
       <Footer/>
+      </AuthProvider>
     </>
   );
 }
