@@ -13,7 +13,7 @@ const Profile = ({ setShowProfile ,onEdit}) => {
         <button className={styles.closeButton} onClick={onClick}>
           ✖
         </button>
-        <h1 className="text-3xl font-bold text-center">Profile</h1>
+        <h1 className="text-3xl font-bold z-index:99 text-center">Profile</h1>
         <div className="mt-4">
           <p className="text-lg"><strong>Name:</strong> John Doe</p>
           <p className="text-lg"><strong>Email:</strong> johndoe@example.com</p>
