@@ -11,12 +11,16 @@
   "dependencies": {
     "@motionone/react": "^10.16.4",
     "@types/react-color": "^3.0.13",
+    "axios": "^1.7.9",
     "firebase": "^11.3.1",
     "framer-motion": "^12.4.7",
     "next": "15.1.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-show-more-text": "^1.7.1"
+ 
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-modal": "^3.16.3",
+    "react-toastify": "^11.0.3"
+ 
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
