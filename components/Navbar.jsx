@@ -43,7 +43,7 @@ const Navbar = ({ showProfile, setShowProfile }) => {
 
         {/* ✅ Brand Logo */}
         <Link href="/" className="flex items-center text-xl font-bold">
-          <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" className="h-8" alt="TE Logo" />
+          <img src="https://rajasthan.gov.in/assets/images/raj-logo.png" className="h-20" alt="TE Logo" />
         </Link>
 
         {/* ✅ Navbar Links */}
