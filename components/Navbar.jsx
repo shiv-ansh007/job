@@ -58,17 +58,17 @@ const Navbar = ({ showProfile, setShowProfile }) => {
             </Link>
           </li>
           <li>
-            <a href="#jobs" className="block px-4 py-2 text-black/60 hover:text-black">
+            <a href="/jobs" className="block px-4 py-2 text-black/60 hover:text-black">
               Jobs
             </a>
           </li>
           <li>
-            <Link href="/projects" className="block px-4 py-2 text-black/60 hover:text-black">
+            <Link href="/interships" className="block px-4 py-2 text-black/60 hover:text-black">
               Internships
             </Link>
           </li>
           <li>
-            <Link href="/mentorship" className="block px-4 py-2 text-black/60 hover:text-black">
+            <Link href="/mentor" className="block px-4 py-2 text-black/60 hover:text-black">
               Mentorship & Counseling
             </Link>
           </li>
