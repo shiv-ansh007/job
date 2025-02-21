@@ -105,7 +105,7 @@ const Home = () => {
     </TabList>
 
     <TabPanel >
-  <div className=" text-left rounded-lg bg-yellow-200 p-4">
+  <div className=" text-left text-white rounded-lg bg-yellow-600 p-4">
     <ul>
       <h1 className="text-bold text-3xl m-3"> Advantages over other Platforms </h1>
         <li><strong> - Comprehensive Platform:</strong> Access a wide range of job opportunities, internships, and mentorship programs.</li>
