@@ -80,7 +80,7 @@ function Mentorship() {
    <>  { showProfile?<Profile setShowProfile={setShowProfile}/>:<></>}
          <Navbar showProfile={showProfile} setShowProfile={setShowProfile} />
    
-   <div className="container bg-yellow-700 mx-auto rounded-lg rounded-b-2xl flex-grow mb-20 px-7 pb-10 py-10 text-white">
+   <div className="container bg-yellow-700 mx-auto rounded-lg rounded-b-2xl flex-grow mb-20 px-7  pb-10 py-10 text-white">
           {/* Title and Field Selection */}
           <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
               <div className="p-4">
@@ -130,7 +130,7 @@ function Mentorship() {
                       {filteredMentors.map((mentor) => (
                           <li
                               key={mentor.id}
-                              className={`mt-2 p-4 border rounded-lg ${selectedMentor?.id === mentor.id ? 'bg-blue-100' : 'bg-white'}`}
+                              className={`mt-2 p-4 border rounded-lg ${selectedMentor?.id === mentor.id ? 'bg-white-500' : 'bg-blue-400'}`}
                               onClick={() => handleMentorSelection(mentor)}
                           >
                               <div className="flex items-center">
