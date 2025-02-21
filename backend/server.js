@@ -1,85 +1,67 @@
-const express = require("express");
-const multer = require("multer");
-const cors = require("cors");
-const path = require("path");
-const fs = require("fs");
-require("dotenv").config();
+import mongoose from "mongoose";
+import express from "express";
+import multer from "multer";
+import cors from "cors";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";  // ✅ Ensure `.js` extension
+import JobApplication from "./models/JobApplication.js";  // ✅ Ensure `.js` extension
 
+dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cors()); // ✅ Allows frontend to communicate with backend
+app.use(express.json()); // ✅ Allows JSON parsing
+app.use(express.urlencoded({ extended: true })); // ✅ Allows form data parsing
 
-// Ensure 'uploads' directory exists
-const uploadDir = path.join(__dirname, "uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
+// ✅ Connect to MongoDB
+connectDB();
 
-// Configure Multer for file uploads
+// ✅ Sample Route
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
+// ✅ Setup file storage for resumes
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, uploadDir);
+    cb(null, "uploads/"); // Saves files in 'uploads/' folder
   },
   filename: (req, file, cb) => {
-    const uniqueName = `${Date.now()}-${file.originalname}`;
-    cb(null, uniqueName);
-  }
+    cb(null, Date.now() + "-" + file.originalname);
+  },
 });
 
-// File filter to allow only PDFs
-const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "application/pdf") {
-    cb(null, true);
-  } else {
-    cb(new Error("Only PDF files are allowed!"), false);
-  }
-};
+const upload = multer({ storage });
 
-// Multer upload configuration
-const upload = multer({
-  storage,
-  fileFilter,
-  limits: { fileSize: 5 * 1024 * 1024 } // 5MB limit
-});
-
-// API Endpoint for Job Applications
-app.post("/api/apply", upload.single("resume"), (req, res) => {
+// ✅ Backend Route to Handle Form Submission
+app.post("/apply", upload.single("resumeFile"), async (req, res) => {
   try {
-    const { jobTitle, fullName, email, availability } = req.body;
-    const resumePath = req.file ? req.file.path : null;
+    const { name, email, resumeLink, coverLetter } = req.body;
+    const resumeFile = req.file ? req.file.filename : null;
 
-    if (!jobTitle || !fullName || !email || !resumePath) {
-      return res.status(400).json({ success: false, message: "All fields are required!" });
+    if (!name || !email || (!resumeLink && !resumeFile)) {
+      return res.status(400).json({ message: "Missing required fields!" });
     }
 
-    console.log("New Application Submitted:", {
-      jobTitle,
-      fullName,
+    // ✅ Save Application to MongoDB
+    const application = new JobApplication({
+      name,
       email,
-      availability,
-      resumePath
+      resumeLink,
+      coverLetter,
+      resumeFile,
     });
 
-    res.status(200).json({
-      success: true,
-      message: "Application submitted successfully!",
-      resumeURL: `/uploads/${path.basename(resumePath)}` // Send resume link
-    });
+    await application.save(); // ✅ Saves to MongoDB Atlas
 
+    console.log("✅ Application received:", { name, email, resumeLink, coverLetter, resumeFile });
+    res.status(201).json({ message: "Application submitted successfully!" });
   } catch (error) {
-    console.error("Error handling application:", error);
-    res.status(500).json({ success: false, message: "Internal server error!" });
+    console.error("❌ Server error:", error);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-// Serve uploaded files
-app.use("/uploads", express.static(uploadDir));
-
-// Start Server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at: http://localhost:${PORT}`);
-});
+// ✅ Start the server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
