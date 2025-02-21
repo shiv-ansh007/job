@@ -115,12 +115,12 @@ const Home = () => {
 
       <section className="p-10 text-center">
         <h2 className="text-2xl font-bold">Why Choose Us?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 ">
           {features.map((feature, index) => (
             <div
               key={index}
               className={`p-4 border rounded-lg shadow-lg cursor-pointer ${
-                activeFeature === index ?  'bg-yellow-500' : 'bg-blue-200'
+                activeFeature === index ?  'bg-blue-500' : 'bg-blue-200'
               }`}
               onClick={() => toggleFeature(index)}
             >
