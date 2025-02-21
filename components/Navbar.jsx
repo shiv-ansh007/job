@@ -1,12 +1,10 @@
- "use client";
+'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { auth } from "../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import AuthModal from "../components/AuthModal";
 import PropTypes from "prop-types";
-
-
 
 const Navbar = ({ showProfile, setShowProfile }) => {
   const [user, setUser] = useState(null);
@@ -28,8 +26,8 @@ const Navbar = ({ showProfile, setShowProfile }) => {
 
   return (
     <>
-      <nav className="flex justify-between items-center bg-gray-100 p-4 shadow-md">
-        {/* ✅ Mobile Menu Button */}
+      <nav className="flex justify-between items-center bg-white p-4 shadow-md relative top-0 w-full z-50">
+        {/* Mobile Menu Button */}
         <button
           className="lg:hidden border-0 bg-transparent px-2 text-black/50 dark:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -43,40 +41,52 @@ const Navbar = ({ showProfile, setShowProfile }) => {
           </svg>
         </button>
 
-        {/* ✅ Brand Logo */}
+        {/* Brand Logo */}
         <Link href="/" className="flex items-center text-xl font-bold">
           <img src="https://rajasthan.gov.in/assets/images/raj-logo.png" className="h-20" alt="TE Logo" />
         </Link>
 
-        {/* ✅ Navbar Links */}
+        {/* Navbar Links */}
         <ul
-          className={`lg:flex lg:space-x-6 absolute lg:static bg-gray-100 w-full lg:w-auto top-14 left-0 lg:flex-row flex-col shadow-md lg:shadow-none ${
+          className={`lg:flex lg:space-x-6 absolute lg:static bg-white w-full lg:w-auto top-14 right-0 lg:flex-row flex-col shadow-md lg:shadow-none ${
             isMobileMenuOpen ? "flex" : "hidden"
           }`}
         >
           <li>
-            <a href="/"  className="block px-4 py-2 text-black/60 hover:text-black">
+            <a
+              href="/"
+              className="block gap-x-6 rounded-md px-4 py-2 text-black/60 hover:text-black hover:bg-gray-200 transition duration-300"
+            >
               Home
             </a>
           </li>
           <li>
-            <a href="/jobs" className="block px-4 py-2 text-black/60 hover:text-black">
+            <a
+              href="/jobs"
+              className="block gap-x-6 rounded-md px-4 py-2 text-black/60 hover:text-black hover:bg-gray-200 transition duration-300"
+            >
               Jobs
             </a>
           </li>
           <li>
-            <Link href="/intership" className="block px-4 py-2 text-black/60 hover:text-black">
+            <Link
+              href="/intership"
+              className="block gap-x-6 rounded-md px-4 py-2 text-black/60 hover:text-black hover:bg-gray-200 transition duration-300"
+            >
               Internships
             </Link>
           </li>
           <li>
-            <Link href="/mentor" className="block px-4 py-2 text-black/60 hover:text-black">
+            <Link
+              href="/mentor"
+              className="block gap-x-6 rounded-md px-4 py-2 text-black/60 hover:text-black hover:bg-gray-200 transition duration-300"
+            >
               Mentorship & Counseling
             </Link>
           </li>
         </ul>
 
-        {/* ✅ Right Icons */}
+        {/* Right Icons */}
         <div className="relative flex items-center space-x-4">
           {user ? (
             <div className="relative">
@@ -111,14 +121,14 @@ const Navbar = ({ showProfile, setShowProfile }) => {
               )}
             </div>
           ) : (
-            <button onClick={() => setIsAuthModalOpen(true)} className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            <button onClick={() => setIsAuthModalOpen(true)} className="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700">
               Sign In / Register
             </button>
           )}
         </div>
       </nav>
 
-      {/* ✅ Authentication Modal */}
+      {/* Authentication Modal */}
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </>
   );
