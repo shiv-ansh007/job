@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { auth } from "../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"; // Import Firebase methods
 import AuthModal from "../components/AuthModal";
 import PropTypes from "prop-types";
 
@@ -22,6 +23,18 @@ const Navbar = ({ showProfile, setShowProfile }) => {
   const handleLogout = async () => {
     await signOut(auth);
     setIsProfileOpen(false);
+  };
+
+  // Google sign-in function
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log('User Info:', user); // You can access user info here
+    } catch (error) {
+      console.error("Error during Google Sign-In:", error);
+    }
   };
 
   return (
@@ -123,6 +136,14 @@ const Navbar = ({ showProfile, setShowProfile }) => {
           ) : (
             <button onClick={() => setIsAuthModalOpen(true)} className="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700">
               Sign In / Register
+            </button>
+          )}
+          {!user && (
+            <button
+              onClick={handleGoogleSignIn} // Use onClick to handle Google sign-in
+              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            >
+              Sign in with Google
             </button>
           )}
         </div>
