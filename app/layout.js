@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Job Portal",
+  title: "Rajasthan.Internship.gov.in",
   description: " ",
 };
 
