@@ -93,17 +93,24 @@ const Home = () => {
           )}
         </div>
         <motion.div
-          className="w-2/3 p-8 text-center z-index:0 bg-white rounded-l-2xl shadow-2xl"
+          className="w-2/3 p-8 text-center  bg-white rounded-l-2xl shadow-2xl"
           animate={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-xl font-bold text-yellow-600">
-            राजस्थान सरकार द्वारा इंटर्नशिप और नौकरियों को बढ़ावा देना
+          <h2 className="text-4xl p-1 font-bold text-yellow-600">
+            " राजस्थान सरकार द्वारा इंटर्नशिप और नौकरियों को बढ़ावा देना "
           </h2>
-          <p className="mt-2 text-yellow-600">
-            विभिन्न क्षेत्रों में इंटर्नशिप और नौकरी के अवसरों के लिए हमारे
+          <p className="mt-5 text-left text-yellow-600">
+           - विभिन्न क्षेत्रों में इंटर्नशिप और नौकरी के अवसरों के लिए हमारे
             प्लेटफ़ॉर्म का उपयोग करें।
+          </p>
+          <p className="mt-5 text-left text-yellow-600">
+           - राजस्थान सरकार ने AI क्षेत्र में प्रशिक्षण और
+           इंटर्नशिप के अवसर प्रदान किए हैं।
+          </p><p className="mt-5 text-left text-yellow-600">
+            - सरकार ने AI आधारित परियोजनाओं की शुरुआत की है, 
+            जो युवाओं को वास्तविक दुनिया की समस्याओं को हल करने का अवसर प्रदान करती हैं।
           </p>
         </motion.div>
       </header>
