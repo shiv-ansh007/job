@@ -55,7 +55,7 @@ const Navbar = ({ showProfile, setShowProfile }) => {
           }`}
         >
           <li>
-            <a href="/"  className="block px-4 py-2 text-black/60 hover:text-black">
+            <a href="/dashboard"  className="block px-4 py-2 text-black/60 hover:text-black">
               Home
             </a>
           </li>

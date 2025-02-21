@@ -1,5 +1,7 @@
 "use client";
  
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import { useRouter } from "next/navigation";
 
 export default function Internships() { // ✅ Correct function declaration
@@ -33,6 +35,8 @@ export default function Internships() { // ✅ Correct function declaration
   ];
 
   return (
+    <> 
+    <Navbar/>
     <div>
       
       <h1 className="text-3xl font-bold text-center mt-10">Internship Listings</h1>
@@ -51,5 +55,7 @@ export default function Internships() { // ✅ Correct function declaration
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

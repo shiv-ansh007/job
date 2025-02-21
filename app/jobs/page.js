@@ -1,4 +1,6 @@
 'use client';
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
 const jobsData = [
@@ -14,6 +16,8 @@ const Jobs = () => {
   const [filteredJobs, setFilteredJobs] = useState(jobsData);
 
   return (
+    <> 
+    <Navbar/>
     <div className="bg-gray-100 py-10">
       <section id='jobs' className="max-w-6xl mx-auto px-4">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">Job Listings</h1>
@@ -34,6 +38,8 @@ const Jobs = () => {
         </div>
       </section>
     </div>
+    <Footer/>
+    </>
   );
 };
 
