@@ -70,7 +70,7 @@ const Navbar = ({ showProfile, setShowProfile }) => {
             </Link>
           </li>
           <li>
-            <Link href="/mentor" className="block px-4 py-2 text-black/60 hover:text-black">
+            <Link href="/mentor" className="block px-4 py-2  text-black/60 hover:text-black">
               Mentorship & Counseling
             </Link>
           </li>
