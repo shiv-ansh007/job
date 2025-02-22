@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 
 const Navbar = ({ showProfile, setShowProfile }) => {
   const [user, setUser] = useState(null);
+  const [isScroll, setIsScroll] = useState(false)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,10 +37,20 @@ const Navbar = ({ showProfile, setShowProfile }) => {
       console.error("Error during Google Sign-In:", error);
     }
   };
+  useEffect(()=>{
+    window.addEventListener('scroll', ()=>{
+        if(scrollY > 50){
+            setIsScroll(true)
+        }else{
+            setIsScroll(true)
+        }
+    })
+},[])
+
 
   return (
     <>
-      <nav className="flex justify-between items-center bg-white p-4 shadow-md relative top-0 w-full z-50">
+          <nav className= {`w-full fixed  top-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50   ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20 " : ""}`}>
         {/* Mobile Menu Button */}
         <button
           className="lg:hidden border-0 bg-transparent px-2 text-black/50 dark:text-white"
@@ -61,10 +72,9 @@ const Navbar = ({ showProfile, setShowProfile }) => {
 
         {/* Navbar Links */}
         <ul
-          className={`lg:flex lg:space-x-6 absolute lg:static bg-white w-full lg:w-auto top-14 right-0 lg:flex-row flex-col shadow-md lg:shadow-none ${
-            isMobileMenuOpen ? "flex" : "hidden"
-          }`}
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}
         >
+
           <li>
             <a
               href="/"
@@ -134,14 +144,14 @@ const Navbar = ({ showProfile, setShowProfile }) => {
               )}
             </div>
           ) : (
-            <button onClick={() => setIsAuthModalOpen(true)} className="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700">
+            <button onClick={() => setIsAuthModalOpen(true)} className=" px-4 py-2 bg-gray-600 text-white rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">
               Sign In / Register
             </button>
           )}
           {!user && (
             <button
               onClick={handleGoogleSignIn} // Use onClick to handle Google sign-in
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+              className="px-4 py-2 bg-gray-600 text-white rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black"
             >
               Sign in with Google
             </button>
