@@ -37,20 +37,21 @@ const Navbar = ({ showProfile, setShowProfile }) => {
       console.error("Error during Google Sign-In:", error);
     }
   };
-  useEffect(()=>{
-    window.addEventListener('scroll', ()=>{
-        if(scrollY > 50){
-            setIsScroll(true)
-        }else{
-            setIsScroll(true)
-        }
-    })
-},[])
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
 
 
   return (
     <>
-          <nav className= {`w-full fixed  top-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50   ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20 " : ""}`}>
+      <nav className={`w-full fixed top-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20 " : ""}`}>
         {/* Mobile Menu Button */}
         <button
           className="lg:hidden border-0 bg-transparent px-2 text-black/50 dark:text-white"
@@ -71,10 +72,7 @@ const Navbar = ({ showProfile, setShowProfile }) => {
         </Link>
 
         {/* Navbar Links */}
-        <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}
-        >
-
+        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
           <li>
             <a
               href="/"
@@ -124,27 +122,41 @@ const Navbar = ({ showProfile, setShowProfile }) => {
 
               {/* Profile Dropdown Menu */}
               {isProfileOpen && (
-                <ul className="absolute right-0 bg-white shadow-md rounded-md w-40 mt-2">
-                  <li onClick={() => setShowProfile(true)}>
+                <ul className="absolute right-0 bg-white shadow-md rounded-md w-56 mt-2">
+                  <li className="px-4 py-2 text-gray-700 font-semibold">{user.displayName || "Syed Mohammed"}</li>
+                  <li className="px-4 py-2 text-gray-500">{user.email || "photos78041@gmail.com"}</li>
+                  <li>
+                    <div className="border-t border-gray-200">
+                      <div className="px-4 py-2 text-sm text-gray-700 font-semibold">My Account</div>
+                      <li onClick={() => setShowProfile(true)}>
                     <Link href="" className="block px-4 py-2 hover:bg-gray-200">
                       Profile
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/settings" className="block px-4 py-2 hover:bg-gray-200">
-                      Settings
-                    </Link>
+                  
+                      <Link href="/" className="block px-4 py-2 hover:bg-gray-200">Home</Link>
+                      <Link href="/applications" className="block px-4 py-2 hover:bg-gray-200">My Applications</Link>
+                      <Link href="/bookmarks" className="block px-4 py-2 hover:bg-gray-200">My Bookmarks</Link>
+                      <Link href="/edit-resume" className="block px-4 py-2 hover:bg-gray-200">Edit Resume</Link>
+                      <Link href="/edit-preferences" className="block px-4 py-2 hover:bg-gray-200">Edit Preferences</Link>
+                      <Link href="/safety-tips" className="block px-4 py-2 hover:bg-gray-200">Safety Tips</Link>
+                      <Link href="/help-center" className="block px-4 py-2 hover:bg-gray-200">Help Center</Link>
+                    </div>
                   </li>
                   <li>
-                    <button onClick={handleLogout} className="block w-full px-4 py-2 hover:bg-gray-200 text-left">
-                      Logout
-                    </button>
+                    <div className="border-t border-gray-200">
+                      <div className="px-4 py-2 text-sm text-gray-700 font-semibold">More</div>
+                      <Link href="/manage-account" className="block px-4 py-2 hover:bg-gray-200">Manage Account</Link>
+                      <button onClick={handleLogout} className="block w-full px-4 py-2 hover:bg-gray-200 text-left">
+                        Logout
+                      </button>
+                    </div>
                   </li>
                 </ul>
               )}
             </div>
           ) : (
-            <button onClick={() => setIsAuthModalOpen(true)} className=" px-4 py-2 bg-gray-600 text-white rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">
+            <button onClick={() => setIsAuthModalOpen(true)} className="px-4 py-2 bg-gray-600 text-white rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">
               Sign In / Register
             </button>
           )}
