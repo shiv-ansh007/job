@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const JobApplication = ({ jobId }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [hasApplied, setHasApplied] = useState(
+    localStorage.getItem(`applied_${jobId}`) === "true"
+  );
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     resume: "",
     status: "Pending",
   });
+
+  useEffect(() => {
+    localStorage.setItem(`applied_${jobId}`, hasApplied);
+  }, [hasApplied, jobId]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,12 +28,13 @@ const JobApplication = ({ jobId }) => {
     try {
       await axios.post("http://localhost:5000/api/applications", {
         ...formData,
-        jobId, // Store job reference
+        jobId,
         status: "Submitted",
       });
 
       alert("Application submitted successfully!");
-      setIsFormOpen(false); // Close form after submission
+      setIsFormOpen(false); // Close the form
+      setHasApplied(true); // Change button text
     } catch (error) {
       console.error("Error submitting application:", error);
     }
@@ -33,12 +42,17 @@ const JobApplication = ({ jobId }) => {
 
   return (
     <div>
-      {/* ✅ Apply Now Button */}
+      {/* ✅ Apply Button (Changes to "Applied" after submission) */}
       <button
-        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-        onClick={() => setIsFormOpen(true)}
+        className={`mt-4 px-4 py-2 rounded-md ${
+          hasApplied
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-blue-600 hover:bg-blue-700 text-white"
+        }`}
+        onClick={() => !hasApplied && setIsFormOpen(true)}
+        disabled={hasApplied}
       >
-        Apply Now
+        {hasApplied ? "Applied" : "Apply Now"}
       </button>
 
       {/* ✅ Application Form Modal */}
@@ -76,9 +90,9 @@ const JobApplication = ({ jobId }) => {
               />
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600"
+                className=" bg-yellow-600  px-2 py-2 rounded-lg mt-2 hover:bg-yellow-700"
               >
-                Submit Application
+                Submit Applicationnmmnmnmnmnm
               </button>
             </form>
             <button
