@@ -11,10 +11,8 @@ const Profile = ({ setShowProfile, onEdit }) => {
 
   useEffect(() => {
     const auth = getAuth();
-    const currentUser = auth.currentUser;
-   
     setUser(auth.currentUser);
-}, [user]); // Re-run when `user` changes
+   }, []); // Re-run when `user` changes
   
 
   const onClick = () => {
@@ -25,19 +23,12 @@ const Profile = ({ setShowProfile, onEdit }) => {
     if (user) {
       updateProfile(user, {
         displayName: "New Display Name",
-        
-        // Optionally, update the photo URL
-        // photoURL: "https://example.com/new-profile-photo.jpg"
       })
-        .then(() => {
+        .then(async () => {
           console.log("Profile updated successfully");
+          await user.reload(); // Reload the user from Firebase
           const auth = getAuth();
-          setUser(auth.currentUser );
-          return user.reload();
-        })
-        .then(() => {
-          const auth = getAuth();
-          setUser(auth.currentUser); // Update state with new data
+          setUser(auth.currentUser); // Update state with latest user data
         })
         .catch((error) => {
           console.error("Error updating profile:", error);
@@ -47,12 +38,14 @@ const Profile = ({ setShowProfile, onEdit }) => {
     }
   };
 
+  
+
   const handleEdit = () => {
     setIsEditing(true);
   };
 
   const handleSave = () => {
-    setIsEditing(false);
+    setIsEditing(true);
     // Optionally, refresh user data
   };
 
@@ -61,10 +54,11 @@ const Profile = ({ setShowProfile, onEdit }) => {
   };
 
   return (
+    <div className=" max-h-[400px] mt-20 overflow-y-auto   overflow-x-hidden">
     <div className={styles.profileOverlay} onClick={onClick}>
-      <div className={styles.profileContainer} onClick={(e) => e.stopPropagation()}>
+      <div  className={styles.profileContainer} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeButton} onClick={onClick}>
-          ✖
+          ✖ 
         </button>
         <h1 className="text-3xl font-bold z-index:99 text-center">Profile</h1>
         <div className="mt-4">
@@ -81,9 +75,7 @@ const Profile = ({ setShowProfile, onEdit }) => {
             <strong>Location:</strong> {user ? user.location : "Loading..."}
           </p>
         </div>
-        <button className={styles.editButton} onClick={handleUpdateProfile}>
-          Update Profile
-        </button>
+       
         <button className={styles.editButton} onClick={handleEdit}>
           Edit Profile
         </button>
@@ -92,13 +84,12 @@ const Profile = ({ setShowProfile, onEdit }) => {
             <EditProfile onSave={handleSave} onCancel={handleCancel} />
           ) : (
             <>
-              <h1>Profile</h1>
-              {/* Display user information */}
-              <button onClick={handleEdit}>Edit Profile</button>
+             
             </>
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };

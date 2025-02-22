@@ -3,7 +3,7 @@
 /* Fullscreen overlay effect */
 .profileOverlay {
   position: fixed;
-  top: 0;
+  top: 00;
   left: 0;
   width: 100%;
   height: 100%;
@@ -19,12 +19,16 @@
 .profileContainer {
   background: white;
   padding: 30px;
+  margin-top: 100px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  max-width: 700px;
   width: 90%;
   animation: fadeIn 0.3s ease-in-out;
   position: relative;
+  max-height: 500px; /* Adjust height as needed */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Fade-in animation */
