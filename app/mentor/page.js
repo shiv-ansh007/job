@@ -80,7 +80,7 @@ function Mentorship() {
    <>  { showProfile?<Profile setShowProfile={setShowProfile}/>:<></>}
          <Navbar showProfile={showProfile} setShowProfile={setShowProfile} />
    
-   <div className="container bg-yellow-700 mx-auto rounded-lg rounded-b-2xl flex-grow mb-20 px-7  pb-10 py-10 text-white">
+   <div className="container bg-yellow-700 mx-auto mt-10 rounded-lg rounded-b-2xl flex-grow mb-20 px-7  pb-10 py-10 text-white">
           {/* Title and Field Selection */}
           <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
               <div className="p-4">

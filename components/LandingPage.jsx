@@ -4,6 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { motion } from "framer-motion";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Link from "next/link";
 import { setActive } from "@material-tailwind/react/components/Tabs/TabsContext";
 
 const Home = () => {
@@ -157,9 +158,9 @@ const Home = () => {
           </p>
 
           <div className="mt-8">
-            <button className="bg-white text-yellow-600 font-semibold py-2 px-4 rounded mr-4">
+            <Link href="/resumebuilder" className="bg-white text-yellow-600 font-semibold py-2 px-4 rounded mr-4">
               Get Started
-            </button>
+            </Link>
             <button className="bg-transparent border border-white text-white font-semibold py-2 px-4 rounded">
               Learn More
             </button>
