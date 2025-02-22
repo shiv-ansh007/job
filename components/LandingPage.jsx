@@ -82,9 +82,9 @@ const Home = () => {
     const WhyChooseUsTabs = () => (
   <Tabs >
     <TabList >
-      <Tab >
+      <Tab onClick={() => handleTabClick("Why Choose Us?")}>
       <motion.div
-            whileHover={{ scale: 1.1, backgroundColor: "#60A5FA" }}
+            whileHover={{ scale: 1.1,   }}
             whileTap={{ scale: 0.95 }}
             className={`px-4 py-2 cursor-pointer rounded-md ${activeTab === "Why Choose Us?" ? "bg-yellow-500" : "bg-transparent"}`} // Dynamically change color         
             onClick={() => handleTabClick("Why Choose Us?")} 
@@ -92,9 +92,9 @@ const Home = () => {
         Why Choose Us?
         </motion.div>
         </Tab>
-      <Tab>
+      <Tab  >
         <motion.div
-            whileHover={{ scale: 1.1, backgroundColor: "#60A5FA" }}
+            whileHover={{ scale: 1.1,   }}
             whileTap={{ scale: 0.09 }}
             className={`px-4 py-2 cursor-pointer rounded-md ${activeTab === "How to Apply" ? "bg-yellow-500" : "bg-transparent"}`} // Dynamically change color
             onClick={() => handleTabClick("How to Apply")} 
@@ -143,8 +143,8 @@ const Home = () => {
     );
 
   return (
-    <div>
-      <header className="bg-yellow-600 text-white text-left pl-8 py-20 flex">
+    <div className="mt-32  ">
+      <header className="  w-[90%] bg-yellow-600 rounded-2xl text-white text-left pl-8 py-20 flex mx-auto shadow-2xl transition-all duration-300 hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)] hover:scale-105">
         <div className="w-2/3 p-8">
           <h1 className="text-4xl font-bold">Empowering Your Career Journey</h1>
           <h2 className="mt-2 text-lg font-bold">
