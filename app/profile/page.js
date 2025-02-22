@@ -5,14 +5,35 @@ import styles from "./Profile.module.css";
 import EditProfile from "./EditProfile";
 import PropTypes from "prop-types";
 
+import { db } from "../firebase"; // Import Firestore
+import { doc, getDoc, setDoc } from "firebase/firestore";
+
 const Profile = ({ setShowProfile, onEdit }) => {
   const [user, setUser] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [resumeData, setResumeData] = useState({
+    name: "",
+    email: "",
+    experience: [],
+    education: [],
+  });
 
   useEffect(() => {
     const auth = getAuth();
     const currentUser = auth.currentUser;
-   
+    const fetchResume = async () => {
+      if (!userId) return;
+
+      const docRef = doc(db, "resumes", userId);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setResumeData(docSnap.data());
+      }
+    };
+
+    fetchResume();
+    [userId]
     setUser(auth.currentUser);
 }, [user]); // Re-run when `user` changes
   
@@ -47,13 +68,25 @@ const Profile = ({ setShowProfile, onEdit }) => {
     }
   };
 
+  const handleChange = (e) => {
+    setResumeData({ ...resumeData, [e.target.name]: e.target.value });
+  };
+
   const handleEdit = () => {
     setIsEditing(true);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     setIsEditing(false);
     // Optionally, refresh user data
+    if (!userId) return;
+
+    try {
+      await setDoc(doc(db, "resumes", userId), resumeData);
+      alert("Resume updated successfully!");
+    } catch (error) {
+      console.error("Error updating resume:", error);
+    }
   };
 
   const handleCancel = () => {
@@ -66,6 +99,34 @@ const Profile = ({ setShowProfile, onEdit }) => {
         <button className={styles.closeButton} onClick={onClick}>
           ✖
         </button>
+        <div className="p-6 max-w-lg mx-auto bg-white shadow-md rounded">
+      <h2 className="text-xl font-semibold mb-4">Resume Profile</h2>
+
+      <input
+        type="text"
+        name="name"
+        value={resumeData.name}
+        onChange={handleChange}
+        placeholder="Full Name"
+        className="w-full p-2 border rounded mb-2"
+      />
+
+      <input
+        type="email"
+        name="email"
+        value={resumeData.email}
+        onChange={handleChange}
+        placeholder="Email"
+        className="w-full p-2 border rounded mb-2"
+      />
+
+      <button onClick={handleSave} className="mt-4 bg-blue-600 text-white p-2 rounded">
+        Save Resume
+      </button>
+    </div>
+  
+
+
         <h1 className="text-3xl font-bold z-index:99 text-center">Profile</h1>
         <div className="mt-4">
           <p className="text-lg">
