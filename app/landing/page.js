@@ -1,143 +1,80 @@
-'use client'
-import { useState, useEffect } from "react";
-import { auth } from "../../lib/firebase";
-import { onAuthStateChanged } from "firebase/auth";
-import { motion } from "@motionone/react";
-import Navbar from "@/components/Navbar";
+ 'use client';
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Profile from "@/components/Profile";
+import { useEffect, useState } from "react";
 
-const Home = () => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [expandedFeature, setExpandedFeature] = useState(null);
-  const [activeFeature, setActiveFeature] = useState(null); // State to track active feature
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  if (loading) return null;
-
-  const features = [
-    {
-      title: "AI-Driven Job Matching",
-      shortDescription: "Get personalized job recommendations based on your skills.",
-      fullDescription:
-        "Our advanced AI algorithms analyze your unique skill set and career objectives to match you with the most suitable job opportunities, ensuring a perfect fit for your professional growth.",
-    },
-    {
-      title: "Internship & Training",
-      shortDescription: "Secure internships and gain hands-on experience.",
-      fullDescription:
-        "We collaborate with leading organizations to offer exclusive internship programs that provide practical experience, enhancing your employability and industry readiness.",
-    },
-    {
-      title: "Mentorship & Guidance",
-      shortDescription: "Connect with industry professionals for career advice.",
-      fullDescription:
-        "Gain insights and guidance from seasoned professionals through our mentorship programs, helping you navigate your career path with informed decisions and expert advice.",
-    },
-    {
-      title: "AI-Driven Job Matching",
-      shortDescription: "Get personalized job recommendations based on your skills.",
-      fullDescription:
-        "Our advanced AI algorithms analyze your unique skill set and career objectives to match you with the most suitable job opportunities, ensuring a perfect fit for your professional growth.",
-    },
-    {
-      title: "Internship & Training",
-      shortDescription: "Secure internships and gain hands-on experience.",
-      fullDescription:
-        "We collaborate with leading organizations to offer exclusive internship programs that provide practical experience, enhancing your employability and industry readiness.",
-    },
-    {
-      title: "Mentorship & Guidance",
-      shortDescription: "Connect with industry professionals for career advice.",
-      fullDescription:
-        "Gain insights and guidance from seasoned professionals through our mentorship programs, helping you navigate your career path with informed decisions and expert advice.",
-    },
-    // Add more features as needed
-  ];
-
-  const toggleFeature = (index) => {
-    setExpandedFeature(expandedFeature === index ? null : index);
-    setActiveFeature(index); // Set the active feature on click
+const InternshipList = () => {
+  const [internships, setInternships] = useState([]);
+  const [query, setQuery] = useState("");
+  const [showProfile, setShowProfile] = useState(false);
+   
+  const onClick = () => {
+    setShowProfile((prev) => !prev);
   };
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/internships?search=${query}`)
+      .then((res) => res.json())
+      .then((data) => setInternships(data))
+      .catch((err) => console.error("❌ Fetch Error:", err));
+  }, [query]);
+
   return (
-    <> 
-    <Navbar/>
-    <div>
-      <header className="bg-yellow-600 text-white text-left pl-8 py-20 flex">
-        <div className="w-2/3 p-8">
-          <h1 className="text-4xl font-bold">Empowering Your Career Journey</h1>
-          <h2 className="mt-2 text-lg font-bold">
-            Find your dream job, internship, or mentor in one place.
-          </h2>
-          <p className="mt-3 text-gray-200">
-            An Interactive Job and Internship Platform for Technical Education
-            <br />
-            Department, Govt. of Rajasthan
-          </p>
+    <>
+      {showProfile ? <Profile setShowProfile={setShowProfile} /> : null}
+      <Navbar showProfile={showProfile} setShowProfile={setShowProfile} />
 
-          <div className="mt-8">
-            <button className="bg-white text-yellow-600 font-semibold py-2 px-4 rounded mr-4">
-              Get Started
-            </button>
-            <button className="bg-transparent border border-white text-white font-semibold py-2 px-4 rounded">
-              Learn More
-            </button>
-          </div>
-          {!user && (
-            <button className="mt-6 bg-white text-yellow-600 px-6 py-2 rounded-full font-semibold">
-              Sign Up Now
-            </button>
+      {/* Page Background with Yellow Theme */}
+      <div className="pl-8 py-20 mt-20 bg-gradient-to-b from-yellow-500 to-yellow-900 min-h-screen">
+        
+        {/* Heading with Gradient Text */}
+        <h1 className="text-5xl font-extrabold text-transparent bg-gradient-to-r from-yellow-300 to-yellow-700 bg-clip-text text-center pb-6">
+          Internship List
+        </h1>
+
+        {/* Search Input */}
+        <div className="flex justify-center mt-4">
+          <input
+            type="text"
+            placeholder="Search by company, role, or location..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="p-3 border-2 border-yellow-700 rounded-lg w-3/4 md:w-1/2 
+                       focus:outline-none focus:ring-4 focus:ring-yellow-500 
+                       bg-yellow-100 placeholder-gray-700 text-gray-900"
+          />
+        </div>
+
+        {/* Internship List */}
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          {internships.length > 0 ? (
+            internships.map((intern, index) => (
+              <li
+                key={index}
+                className="p-6 bg-yellow-50 rounded-lg shadow-lg border border-yellow-700 
+                          hover:shadow-xl hover:bg-yellow-200 hover:scale-105 hover:text-yellow-900 
+                          transition-all duration-300 ease-in-out transform"
+              >
+                <h2 className="text-xl font-semibold text-yellow-800">{intern.internship_title}</h2>
+                <p className="text-gray-700"><strong>Company:</strong> {intern.company_name}</p>
+                <p className="text-gray-700"><strong>Location:</strong> {intern.location}</p>
+                <p className="text-gray-700"><strong>Start Date:</strong> {intern.start_date}</p>
+                <p className="text-gray-700"><strong>Duration:</strong> {intern.duration}</p>
+                <p className="text-gray-700"><strong>Stipend:</strong> {intern.stipend}</p>
+              </li>
+            ))
+          ) : (
+            <p className="text-gray-900 text-center col-span-full bg-yellow-300 p-4 rounded-lg">
+              No internships found.
+            </p>
           )}
-        </div>
-        <motion.div
-          className="w-2/3 p-8 text-center z-index:0 bg-white rounded-l-2xl shadow-2xl"
-          animate={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-xl font-bold text-yellow-600">
-            राजस्थान सरकार द्वारा इंटर्नशिप और नौकरियों को बढ़ावा देना
-          </h2>
-          <p className="mt-2 text-yellow-600">
-            विभिन्न क्षेत्रों में इंटर्नशिप और नौकरी के अवसरों के लिए हमारे
-            प्लेटफ़ॉर्म का उपयोग करें।
-          </p>
-        </motion.div>
-      </header>
+        </ul>
+      </div>
 
-      <section className="p-10 text-center">
-        <h2 className="text-2xl font-bold">Why Choose Us?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 ">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className={`p-4 border rounded-lg shadow-lg cursor-pointer ${
-                activeFeature === index ?  'bg-blue-500' : 'bg-blue-200'
-              }`}
-              onClick={() => toggleFeature(index)}
-            >
-              <h3 className="font-bold text-left">{feature.title}</h3>
-              <p className="mt-2 text-left text-gray-800">
-                {expandedFeature === index
-                  ? feature.fullDescription
-                  : feature.shortDescription}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 };
 
-export default Home;
+export default InternshipList;
