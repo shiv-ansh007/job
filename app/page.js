@@ -1,6 +1,5 @@
- "use client";
+"use client";
 import Navbar from "@/components/Navbar";
-
 import LandingPage from "@/components/LandingPage";
 import Internships from "@/components/Internships";
 import Mentorship from "@/components/Mentorship";
@@ -10,22 +9,25 @@ import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
 
+import Head from "next/head";
+import Chatbot from "@/components/Chatbot"; // ✅ Import the Chatbot
 
-export default function Home( {children}) {
+export default function Home({ children }) {
   const [showProfile, setShowProfile] = useState(false);
-   
+
   const onClick = () => {
-    setShowProfile((prev) => !prev); // ✅ Now it's a function
+    setShowProfile((prev) => !prev);
   };
 
   return (
     <>
-    <AuthProvider> 
-      { showProfile?<Profile setShowProfile={setShowProfile}/>:<></>}
-      <Navbar showProfile={showProfile} setShowProfile={setShowProfile} /> {/* ✅ Passing to Navbar */}
-      <LandingPage />
-      {children}
-      <Footer/>
+      <AuthProvider>
+        {showProfile ? <Profile setShowProfile={setShowProfile} /> : null}
+        <Navbar showProfile={showProfile} setShowProfile={setShowProfile} />
+        <LandingPage />
+        {children}
+        <Footer />
+        <Chatbot /> {/* ✅ Add the chatbot here */}
       </AuthProvider>
     </>
   );
