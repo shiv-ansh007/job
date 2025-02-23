@@ -160,7 +160,7 @@ const Home = () => {
 
           <div className="mt-8 ">
             <Link href="/resumebuilder" className="bg-white text-yellow-600 font-semibold py-2 px-4 rounded  mr-4">
-              Get Started
+               Resume Builder
             </Link>
             <button className="bg-transparent border border-white text-white font-semibold py-2 px-4 mt-4 rounded">
               Learn More
