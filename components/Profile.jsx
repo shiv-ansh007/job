@@ -12,40 +12,44 @@ const Profile = ({ setShowProfile, onEdit }) => {
   useEffect(() => {
     const auth = getAuth();
     const currentUser = auth.currentUser;
-   
     setUser(auth.currentUser);
-}, [user]); // Re-run when `user` changes
+}, []); // Re-run when `user` changes
   
 
   const onClick = () => {
     setShowProfile((prev) => !prev);
   };
 
-  const handleUpdateProfile = () => {
-    if (user) {
-      updateProfile(user, {
-        displayName: "New Display Name",
-        
-        // Optionally, update the photo URL
-        // photoURL: "https://example.com/new-profile-photo.jpg"
-      })
-        .then(() => {
-          console.log("Profile updated successfully");
-          const auth = getAuth();
-          setUser(auth.currentUser );
-          return user.reload();
-        })
-        .then(() => {
-          const auth = getAuth();
-          setUser(auth.currentUser); // Update state with new data
-        })
-        .catch((error) => {
-          console.error("Error updating profile:", error);
-        });
-    } else {
+
+  const handleUpdateProfile = async () => {
+    if (!user) {
       console.log("No user is signed in.");
+      return;
+    }
+  
+    try {
+      await updateProfile(user, {
+        displayName: "New Display Name",
+      });
+  
+      console.log("Profile updated successfully");
+  
+      await user.reload(); // Ensure Firebase reloads user data
+      const updatedUser = getAuth().currentUser; // Get the latest user data
+      setUser(updatedUser);
+    } catch (error) {
+      console.error("Error updating profile:", error);
     }
   };
+  
+  
+
+   const handleProfileUpdate = () => {
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+    setUser(currentUser); // Refresh user data
+  };
+
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -67,18 +71,18 @@ const Profile = ({ setShowProfile, onEdit }) => {
           ✖
         </button>
         <h1 className="text-3xl font-bold z-index:99 text-center">Profile</h1>
-        <div className="mt-4">
-          <p className="text-lg">
-            <strong>Name:</strong> {user ? user.displayName : "Loading..."}
+        <div className="mt-4  px-4 py-2">
+          <p className="text-lg rounded-lg py-2  border-2 border-yellow-400">
+            <strong className="px-2">Name :</strong> {user ? user.displayName : "Loading..."}
           </p>
-          <p className="text-lg">
-            <strong>Email:</strong> {user ? user.email : "Loading..."}
+          <p className="text-lg rounded-lg py-2 mt-2 border-2 border-yellow-400">
+            <strong  className="px-2">Email :</strong> {user ? user.email : "Loading..."}
           </p>
-          <p className="text-lg">
-            <strong>Phone:</strong> {user ? user.phoneNumber : "Loading..."}
+          <p className="text-lg rounded-lg py-2 mt-2 border-2 border-yellow-400">
+            <strong  className="px-2">Phone :</strong> {user ? user.phoneNumber : "Loading..."}
           </p>
-          <p className="text-lg">
-            <strong>Location:</strong> {user ? user.location : "Loading..."}
+          <p className="text-lg rounded-lg py-2 mt-2 border-2 border-yellow-400">
+            <strong  className="px-2">Location :</strong> {user ? user.location : "Loading..."}
           </p>
         </div>
         <button className={styles.editButton} onClick={handleUpdateProfile}>
@@ -89,12 +93,12 @@ const Profile = ({ setShowProfile, onEdit }) => {
         </button>
         <div className={styles.container}>
           {isEditing ? (
-            <EditProfile onSave={handleSave} onCancel={handleCancel} />
+            <EditProfile onProfileUpdate={handleProfileUpdate}  />
           ) : (
             <>
-              <h1>Profile</h1>
+              <h1></h1>
               {/* Display user information */}
-              <button onClick={handleEdit}>Edit Profile</button>
+              <button onClick={handleEdit}></button>
             </>
           )}
         </div>

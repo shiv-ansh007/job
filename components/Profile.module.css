@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Ensures it stays on top */
+  z-index: 99; /* Ensures it stays on top */
 }
 
 /* Profile Card */
@@ -21,7 +21,7 @@
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  max-width: 1000px;
   width: 90%;
   animation: fadeIn 0.3s ease-in-out;
   position: relative;
@@ -44,7 +44,7 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: red;
+  background: none;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -55,17 +55,20 @@
 }
 
 .closeButton:hover {
-  background: darkred;
+  background: #EAB308;
 }
 
 
 .profileContainer {
-  max-width: 500px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #EAB308;
   border-radius: 8px;
   background-color: #f9f9f9;
+  overflow-y: auto;
+  max-height: 90vh;
+  scrollbar-width:none;
 }
 
 .profileTitle {
@@ -93,8 +96,9 @@
 }
 
 .editButton {
-  background-color: #007bff;
+  background-color: #EAB308;
   color: white;
+  margin: 20px 25px 10px 0;
 }
 
 .saveButton {
@@ -103,7 +107,7 @@
 }
 
 .cancelButton {
-  background-color: #dc3545;
+  background-color: #ff0000;
   color: white;
 }
 
