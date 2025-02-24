@@ -137,7 +137,9 @@ const Navbar = ({ showProfile, setShowProfile }) => {
                       <Link href="/" className="block px-4 py-2 hover:bg-gray-200">Home</Link>
                       <Link href="/my-applications" className="block px-4 py-2 hover:bg-gray-200">My Applications</Link>
                       <Link href="/bookmarks" className="block px-4 py-2 hover:bg-gray-200">My Bookmarks</Link>
-                      <Link href="/resumebuilder" className="block px-4 py-2 hover:bg-gray-200">Resume Builder</Link>
+ 
+                      <Link href="/resumebuilder" className="block px-4 py-2 hover:bg-gray-200"> Resume Builder</Link>
+ 
                       <Link href="/edit-preferences" className="block px-4 py-2 hover:bg-gray-200">Edit Preferences</Link>
                       <Link href="/safety-tips" className="block px-4 py-2 hover:bg-gray-200">Safety Tips</Link>
                       <Link href="/help-center" className="block px-4 py-2 hover:bg-gray-200">Help Center</Link>

@@ -165,7 +165,7 @@ const ResumeBuilder = () => {
         </div>
 
         {/* ✅ Navigation Buttons */}
-        <div className="flex bg-yellow-400 justify-between mt-6">
+        <div className="flex  justify-between mt-6">
           {step > 1 && (
             <button onClick={handleBack} className="bg-yellow-500 text-black px-4 py-2 rounded-lg">
               Back
@@ -178,7 +178,7 @@ const ResumeBuilder = () => {
           ) : (
             <>
               <button onClick={handleDownload} className="bg-blue-600 text-white px-4 py-2 rounded">Download PDF</button>
-              <button onClick={handleSubmit} className="bg-green-500 text-black px-4 py-2 rounded-lg">Save Resume</button>
+              <button onClick={handleSubmit} className="bg-yellow-500 text-black px-4 py-2 rounded-lg">Save Resume</button>
             </>
           )}
         </div>
