@@ -43,6 +43,33 @@ const EditProfile = () => {
     const value = Array.from(e.target.selectedOptions, (option) => option.value);
     setSkills(value);
   };
+  const EditProfile = ({ onProfileUpdate }) => {
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const user = auth.currentUser;
+      if (user) {
+        let resumeURL = userData.resume;
+        if (resumeFile) {
+          const resumeRef = ref(storage, `resumes/${user.uid}`);
+          await uploadBytes(resumeRef, resumeFile);
+          resumeURL = await getDownloadURL(resumeRef);
+        }
+        await setDoc(doc(db, "users", user.uid), {
+          displayName: userData.displayName,
+          email: userData.email,
+          phoneNumber: userData.phoneNumber,
+          location: userData.location,
+          resume: resumeURL,
+          skills: skills,
+          experience: experience,
+        });
+  
+        alert("Profile updated successfully!");
+        onProfileUpdate(); // Notify parent component
+      }
+    };
+  };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,11 +91,13 @@ const EditProfile = () => {
         experience: experience,
       });
       alert("Profile updated successfully!");
+      onProfileUpdate();
     }
   };
 
   return (
-    <form className="bg-yellow-500 m-4 max-h-[400px] overflow-y-auto overflow-x-hidden rounded-lg  pt-6 px-4 py-4" onSubmit={handleSubmit}>
+    <form className="bg-yellow-500 m-4 max-h-[400px] overflow-y-auto   no-scrollbar  rounded-lg  pt-6 px-4 py-4" 
+    onSubmit={handleSubmit}>
     
       <input
         type="text"
@@ -101,7 +130,7 @@ const EditProfile = () => {
       <input type="file"
        onChange={handleFileChange}
        className="rounded-lg mb-2 px-2 py-2 w-full" />
-      <select className="w-full  rounded-lg  px-2 py-2"  multiple onChange={handleSkillsChange}>
+      <select className="w-full no-scrollbar  rounded-lg  px-2 py-2"  multiple onChange={handleSkillsChange}>
         <option value="JavaScript">JavaScript</option>
         <option value="Python">Python</option>
         <option value="AI">AI</option>
@@ -111,7 +140,7 @@ const EditProfile = () => {
       <textarea
         value={experience}
         onChange={(e) => setExperience(e.target.value)}
-        className="rounded-lg mb-2 px-3 mt-4 py-3 h-40 w-full "
+        className="rounded-lg mb-2  px-3 mt-4 py-3 h-40 w-full "
         placeholder="Experience"
       />
       <div className="flex justify-between mt-4">
