@@ -107,6 +107,7 @@ const Home = () => {
   <Tabs >
     <TabList >
       <Tab onClick={() => handleTabClick("Why Choose Us?")}>
+     
       <motion.div
             whileHover={{ scale: 1.1,   }}
             whileTap={{ scale: 0.95 }}
@@ -116,10 +117,10 @@ const Home = () => {
         Why Choose Us?
         </motion.div>
         </Tab>
-      <Tab  >
+        <Tab onClick={() => handleTabClick("How to Apply")}>
         <motion.div
             whileHover={{ scale: 1.1,   }}
-            whileTap={{ scale: 0.09 }}
+            whileTap={{ scale: 0.95 }}
             className={`px-4 py-2 cursor-pointer rounded-md ${activeTab === "How to Apply" ? "bg-yellow-500" : "bg-transparent"}`} // Dynamically change color
             onClick={() => handleTabClick("How to Apply")} 
           >
@@ -146,7 +147,7 @@ const Home = () => {
     </TabPanel>
      {/* How to Apply Tab */}
      <TabPanel >
-      <div className="text-left rounded-lg bg-yellow-200 p-4 ">
+      <div className="text-left text-white rounded-lg bg-yellow-600 p-4 ">
       <p>
         Follow these simple steps to apply for the Rajasthan Government's internship program:
       </p>
@@ -180,11 +181,11 @@ const Home = () => {
             Department, Govt. of Rajasthan
           </p>
 
-          <div className="mt-8">
-            <Link href="/resumebuilder" className="bg-white text-yellow-600 font-semibold py-2 px-4 rounded mr-4">
-              Get Started
+          <div className="mt-8 ">
+            <Link href="/resumebuilder" className="bg-white text-yellow-600 font-semibold py-2 px-4 rounded  mr-4">
+               Resume Builder
             </Link>
-            <button className="bg-transparent border border-white text-white font-semibold py-2 px-4 rounded">
+            <button className="bg-transparent border border-white text-white font-semibold py-2 px-4 mt-4 rounded">
               Learn More
             </button>
           </div>
@@ -230,7 +231,7 @@ const Home = () => {
             <div
               key={index}
               className={`p-4 border rounded-lg shadow-lg cursor-pointer ${
-                activeFeature === index ? "bg-yellow-500" : "bg-blue-100"
+                activeFeature === index ? "bg-yellow-500" : "bg-white" 
               }`}
               onClick={() => toggleFeature(index)}
             >

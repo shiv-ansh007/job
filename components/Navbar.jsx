@@ -135,10 +135,12 @@ const Navbar = ({ showProfile, setShowProfile }) => {
                   </li>
                   
                       <Link href="/" className="block px-4 py-2 hover:bg-gray-200">Home</Link>
+ 
                       <Link href="/applications" className="block px-4 py-2 hover:bg-gray-200">My Applications</Link>
                      <Link href="/resumebuilder" className="block px-4 py-2 hover:bg-gray-200"> Resume Builder</Link>
                      <Link href="/safetytips" className="block px-4 py-2 hover:bg-gray-200">Safety Tips</Link>
                       <Link href="/helpcenter" className="block px-4 py-2 hover:bg-gray-200">Help Center</Link>
+ 
                     </div>
                   </li>
                   <li>
