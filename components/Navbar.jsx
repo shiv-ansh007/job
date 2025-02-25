@@ -51,7 +51,7 @@ const Navbar = ({ showProfile, setShowProfile }) => {
 
   return (
     <>
-      <nav className={`w-full fixed top-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20 " : ""}`}>
+      <nav className={`w-full fixed  top-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20 " : ""}`}>
         {/* Mobile Menu Button */}
         <button
           className="lg:hidden border-0 bg-transparent px-2 text-black/50 dark:text-white"
@@ -136,17 +136,15 @@ const Navbar = ({ showProfile, setShowProfile }) => {
                   
                       <Link href="/" className="block px-4 py-2 hover:bg-gray-200">Home</Link>
                       <Link href="/applications" className="block px-4 py-2 hover:bg-gray-200">My Applications</Link>
-                      <Link href="/bookmarks" className="block px-4 py-2 hover:bg-gray-200">My Bookmarks</Link>
-                      <Link href="/resumebuilder" className="block px-4 py-2 hover:bg-gray-200"> Resume Builder</Link>
-                      <Link href="/edit-preferences" className="block px-4 py-2 hover:bg-gray-200">Edit Preferences</Link>
-                      <Link href="/safety-tips" className="block px-4 py-2 hover:bg-gray-200">Safety Tips</Link>
-                      <Link href="/help-center" className="block px-4 py-2 hover:bg-gray-200">Help Center</Link>
+                     <Link href="/resumebuilder" className="block px-4 py-2 hover:bg-gray-200"> Resume Builder</Link>
+                     <Link href="/safetytips" className="block px-4 py-2 hover:bg-gray-200">Safety Tips</Link>
+                      <Link href="/helpcenter" className="block px-4 py-2 hover:bg-gray-200">Help Center</Link>
                     </div>
                   </li>
                   <li>
                     <div className="border-t border-gray-200">
                       <div className="px-4 py-2 text-sm text-gray-700 font-semibold">More</div>
-                      <Link href="/manage-account" className="block px-4 py-2 hover:bg-gray-200">Manage Account</Link>
+                      <Link href="/manageaccount" className="block px-4 py-2 hover:bg-gray-200">Manage Account</Link>
                       <button onClick={handleLogout} className="block w-full px-4 py-2 hover:bg-gray-200 text-left">
                         Logout
                       </button>
