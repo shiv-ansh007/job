@@ -136,6 +136,8 @@ const Navbar = ({ showProfile, setShowProfile }) => {
 
         {/* Right Icons */}
         <div className="relative flex items-center space-x-4">
+
+
           {user ? (
             <div className="relative">
               {/* Profile Image & Toggle Dropdown */}
@@ -146,7 +148,7 @@ const Navbar = ({ showProfile, setShowProfile }) => {
                   alt="Profile"
                 />
               </button>
-
+              <p>{user.displayName || "Guest User"}</p>
               {/* Profile Dropdown Menu */}
               {isProfileOpen && (
                 <ul className="absolute right-0 bg-white shadow-md rounded-md w-56 mt-2">
