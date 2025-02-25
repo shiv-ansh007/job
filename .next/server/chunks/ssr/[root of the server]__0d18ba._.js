@@ -37,6 +37,24 @@ const Home = ()=>{
     const [activeFeature, setActiveFeature] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null); // State to track active feature
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("Why Choose Us?"); // State to track active tab
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const script1 = document.createElement("script");
+        script1.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js";
+        script1.async = true;
+        document.body.appendChild(script1);
+        const script2 = document.createElement("script");
+        script2.src = "https://files.bpcontent.cloud/2025/02/25/14/20250225142213-81JJQBFZ.js";
+        script2.async = true;
+        document.body.appendChild(script2);
+        script1.onload = ()=>{
+            window.botpressWebChat.init({
+                botId: "eeb435e2-2559-43fa-af71-f7d4cff6e9b4",
+                host: "https://cdn.botpress.cloud/webchat",
+                messagingUrl: "https://messaging.botpress.cloud",
+                showPoweredBy: false,
+                enableTranscriptDownload: true,
+                stylesheet: "https://cdn.botpress.cloud/webchat/v1/style.css"
+            });
+        };
         const unsubscribe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$node$2d$esm$2f$totp$2d$fb613490$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__y__as__onAuthStateChanged$3e$__["onAuthStateChanged"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["auth"], (currentUser)=>{
             setUser(currentUser);
             setLoading(false);
@@ -103,12 +121,12 @@ const Home = ()=>{
                                 children: "Why Choose Us?"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 87,
+                                lineNumber: 110,
                                 columnNumber: 7
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/LandingPage.jsx",
-                            lineNumber: 86,
+                            lineNumber: 109,
                             columnNumber: 7
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$tabs$2f$esm$2f$components$2f$Tab$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Tab$3e$__["Tab"], {
@@ -124,18 +142,18 @@ const Home = ()=>{
                                 children: "How to Apply"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 97,
+                                lineNumber: 120,
                                 columnNumber: 9
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/LandingPage.jsx",
-                            lineNumber: 96,
+                            lineNumber: 119,
                             columnNumber: 7
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/LandingPage.jsx",
-                    lineNumber: 85,
+                    lineNumber: 108,
                     columnNumber: 5
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$tabs$2f$esm$2f$components$2f$TabPanel$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__TabPanel$3e$__["TabPanel"], {
@@ -148,7 +166,7 @@ const Home = ()=>{
                                     children: " Advantages over other Platforms "
                                 }, void 0, false, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 111,
+                                    lineNumber: 134,
                                     columnNumber: 7
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -157,14 +175,14 @@ const Home = ()=>{
                                             children: " - Comprehensive Platform:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 112,
+                                            lineNumber: 135,
                                             columnNumber: 13
                                         }, this),
                                         " Access a wide range of job opportunities, internships, and mentorship programs."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 112,
+                                    lineNumber: 135,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -173,14 +191,14 @@ const Home = ()=>{
                                             children: " - Unique Opportunity:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 113,
+                                            lineNumber: 136,
                                             columnNumber: 14
                                         }, this),
                                         " Engage with state-run programs, schemes, and projects."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 113,
+                                    lineNumber: 136,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -189,14 +207,14 @@ const Home = ()=>{
                                             children: " - Hands-on Experience:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 114,
+                                            lineNumber: 137,
                                             columnNumber: 13
                                         }, this),
                                         " Gain invaluable experience in public administration and development services."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 137,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -205,14 +223,14 @@ const Home = ()=>{
                                             children: " - Exposure to Government Operations:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 138,
                                             columnNumber: 13
                                         }, this),
                                         " Understand the operational ecosystem of the government."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 115,
+                                    lineNumber: 138,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -221,14 +239,14 @@ const Home = ()=>{
                                             children: " - Skill Enhancement:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 116,
+                                            lineNumber: 139,
                                             columnNumber: 13
                                         }, this),
                                         " Improve research and evaluation skills."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 116,
+                                    lineNumber: 139,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -237,14 +255,14 @@ const Home = ()=>{
                                             children: " - Innovative Contribution:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 117,
+                                            lineNumber: 140,
                                             columnNumber: 13
                                         }, this),
                                         " Contribute innovative ideas to improve service delivery."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 117,
+                                    lineNumber: 140,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -253,14 +271,14 @@ const Home = ()=>{
                                             children: " - Mutually Beneficial Program:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 118,
+                                            lineNumber: 141,
                                             columnNumber: 13
                                         }, this),
                                         " Bridge the gap between service providers and recipients."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 118,
+                                    lineNumber: 141,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -269,14 +287,14 @@ const Home = ()=>{
                                             children: " - Youth Empowerment:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 119,
+                                            lineNumber: 142,
                                             columnNumber: 13
                                         }, this),
                                         " Empower youth and enhance their understanding of public services."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 119,
+                                    lineNumber: 142,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -285,30 +303,30 @@ const Home = ()=>{
                                             children: " - Impact on Society:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 120,
+                                            lineNumber: 143,
                                             columnNumber: 13
                                         }, this),
                                         " Foster a deeper understanding of how public services affect society."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 120,
+                                    lineNumber: 143,
                                     columnNumber: 9
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/LandingPage.jsx",
-                            lineNumber: 110,
+                            lineNumber: 133,
                             columnNumber: 5
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 109,
+                        lineNumber: 132,
                         columnNumber: 3
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/LandingPage.jsx",
-                    lineNumber: 108,
+                    lineNumber: 131,
                     columnNumber: 5
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$tabs$2f$esm$2f$components$2f$TabPanel$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__TabPanel$3e$__["TabPanel"], {
@@ -319,7 +337,7 @@ const Home = ()=>{
                                 children: "Follow these simple steps to apply for the Rajasthan Government's internship program:"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 127,
+                                lineNumber: 150,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -330,14 +348,14 @@ const Home = ()=>{
                                                 children: "Step 1:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
-                                                lineNumber: 131,
+                                                lineNumber: 154,
                                                 columnNumber: 13
                                             }, this),
                                             " Visit our official internship platform."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 131,
+                                        lineNumber: 154,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -346,14 +364,14 @@ const Home = ()=>{
                                                 children: "Step 2:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
-                                                lineNumber: 132,
+                                                lineNumber: 155,
                                                 columnNumber: 13
                                             }, this),
                                             " Register by providing your personal details and academic background."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 132,
+                                        lineNumber: 155,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -362,14 +380,14 @@ const Home = ()=>{
                                                 children: "Step 3:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
-                                                lineNumber: 133,
+                                                lineNumber: 156,
                                                 columnNumber: 13
                                             }, this),
                                             " Browse available programs and choose the one that aligns with your interests."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 133,
+                                        lineNumber: 156,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -378,14 +396,14 @@ const Home = ()=>{
                                                 children: "Step 4:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
-                                                lineNumber: 134,
+                                                lineNumber: 157,
                                                 columnNumber: 13
                                             }, this),
                                             " Submit your application along with any necessary documents (e.g., resume, statement of purpose)."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 134,
+                                        lineNumber: 157,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -394,14 +412,14 @@ const Home = ()=>{
                                                 children: "Step 5:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
-                                                lineNumber: 135,
+                                                lineNumber: 158,
                                                 columnNumber: 13
                                             }, this),
                                             " Await confirmation via email and instructions for the next steps."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 135,
+                                        lineNumber: 158,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -410,44 +428,44 @@ const Home = ()=>{
                                                 children: "Step 6:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
-                                                lineNumber: 136,
+                                                lineNumber: 159,
                                                 columnNumber: 13
                                             }, this),
                                             " Join the program and start your internship experience."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 136,
+                                        lineNumber: 159,
                                         columnNumber: 9
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 130,
+                                lineNumber: 153,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Ensure all information is accurate to increase your chances of being selected. We look forward to having you as part of the program!"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 138,
+                                lineNumber: 161,
                                 columnNumber: 7
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 126,
+                        lineNumber: 149,
                         columnNumber: 7
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/LandingPage.jsx",
-                    lineNumber: 125,
+                    lineNumber: 148,
                     columnNumber: 6
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/LandingPage.jsx",
-            lineNumber: 84,
+            lineNumber: 107,
             columnNumber: 3
         }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -464,7 +482,7 @@ const Home = ()=>{
                                 children: "Empowering Your Career Journey"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 150,
+                                lineNumber: 173,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -472,7 +490,7 @@ const Home = ()=>{
                                 children: "Find your dream job, internship, or mentor in one place."
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 151,
+                                lineNumber: 174,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -481,14 +499,14 @@ const Home = ()=>{
                                     "An Interactive Job and Internship Platform for Technical Education",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 156,
+                                        lineNumber: 179,
                                         columnNumber: 13
                                     }, this),
                                     "Department, Govt. of Rajasthan"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 154,
+                                lineNumber: 177,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -500,7 +518,7 @@ const Home = ()=>{
                                         children: "Get Started"
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 161,
+                                        lineNumber: 184,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -508,13 +526,13 @@ const Home = ()=>{
                                         children: "Learn More"
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 164,
+                                        lineNumber: 187,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 160,
+                                lineNumber: 183,
                                 columnNumber: 11
                             }, this),
                             !user && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -522,13 +540,13 @@ const Home = ()=>{
                                 children: "Sign Up Now"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 169,
+                                lineNumber: 192,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 149,
+                        lineNumber: 172,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -550,7 +568,7 @@ const Home = ()=>{
                                 children: '" राजस्थान सरकार द्वारा इंटर्नशिप और नौकरियों को बढ़ावा देना "'
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 180,
+                                lineNumber: 203,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -558,7 +576,7 @@ const Home = ()=>{
                                 children: "- विभिन्न क्षेत्रों में इंटर्नशिप और नौकरी के अवसरों के लिए हमारे प्लेटफ़ॉर्म का उपयोग करें।"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 183,
+                                lineNumber: 206,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -566,7 +584,7 @@ const Home = ()=>{
                                 children: "- राजस्थान सरकार ने AI क्षेत्र में प्रशिक्षण और इंटर्नशिप के अवसर प्रदान किए हैं।"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 187,
+                                lineNumber: 210,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -574,19 +592,19 @@ const Home = ()=>{
                                 children: "- सरकार ने AI आधारित परियोजनाओं की शुरुआत की है, जो युवाओं को वास्तविक दुनिया की समस्याओं को हल करने का अवसर प्रदान करती हैं।"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 191,
+                                lineNumber: 214,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 174,
+                        lineNumber: 197,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/LandingPage.jsx",
-                lineNumber: 148,
+                lineNumber: 171,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -595,12 +613,12 @@ const Home = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(WhyChooseUsTabs, {}, void 0, false, {
                             fileName: "[project]/components/LandingPage.jsx",
-                            lineNumber: 201,
+                            lineNumber: 224,
                             columnNumber: 9
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 200,
+                        lineNumber: 223,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -614,7 +632,7 @@ const Home = ()=>{
                                         children: feature.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 214,
+                                        lineNumber: 237,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -622,30 +640,30 @@ const Home = ()=>{
                                         children: expandedFeature === index ? feature.fullDescription : feature.shortDescription
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 215,
+                                        lineNumber: 238,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 207,
+                                lineNumber: 230,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 205,
+                        lineNumber: 228,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/LandingPage.jsx",
-                lineNumber: 198,
+                lineNumber: 221,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/LandingPage.jsx",
-        lineNumber: 147,
+        lineNumber: 170,
         columnNumber: 5
     }, this);
 };
@@ -2147,15 +2165,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Login$2f$Login
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Profile.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Footer$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Footer.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$AuthContext$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/context/AuthContext.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$noop$2d$head$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/client/components/noop-head.js [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '@/components/ChatbotChatbot'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
 "use client";
-;
-;
 ;
 ;
 ;
@@ -2178,7 +2188,7 @@ function Home({ children }) {
                     setShowProfile: setShowProfile
                 }, void 0, false, {
                     fileName: "[project]/app/page.js",
-                    lineNumber: 25,
+                    lineNumber: 23,
                     columnNumber: 24
                 }, this) : null,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Navbar$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2186,30 +2196,24 @@ function Home({ children }) {
                     setShowProfile: setShowProfile
                 }, void 0, false, {
                     fileName: "[project]/app/page.js",
-                    lineNumber: 26,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LandingPage$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/page.js",
-                    lineNumber: 27,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this),
                 children,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Footer$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/page.js",
-                    lineNumber: 29,
+                    lineNumber: 27,
                     columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Chatbot, {}, void 0, false, {
-                    fileName: "[project]/app/page.js",
-                    lineNumber: 30,
-                    columnNumber: 9
-                }, this),
-                " "
+                }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/page.js",
-            lineNumber: 24,
+            lineNumber: 22,
             columnNumber: 7
         }, this)
     }, void 0, false);
