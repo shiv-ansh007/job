@@ -14,9 +14,32 @@ const Home = () => {
   const [activeFeature, setActiveFeature] = useState(null); // State to track active feature
   const [activeTab, setActiveTab] = useState("Why Choose Us?"); // State to track active tab
 
+  
 
 
   useEffect(() => {
+
+    const script1 = document.createElement("script");
+    script1.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js";
+    script1.async = true;
+    document.body.appendChild(script1);
+
+    const script2 = document.createElement("script");
+    script2.src = "https://files.bpcontent.cloud/2025/02/25/14/20250225142213-81JJQBFZ.js";
+    script2.async = true;
+    document.body.appendChild(script2);
+
+    script1.onload = () => {
+      window.botpressWebChat.init({
+        botId: "eeb435e2-2559-43fa-af71-f7d4cff6e9b4", // 🔹 Replace this with your actual Botpress bot ID
+        host: "https://cdn.botpress.cloud/webchat",
+        messagingUrl: "https://messaging.botpress.cloud",
+        showPoweredBy: false,
+        enableTranscriptDownload: true,
+        stylesheet: "https://cdn.botpress.cloud/webchat/v1/style.css",
+      });
+    };
+ 
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
@@ -224,5 +247,7 @@ const Home = () => {
     </div>
   );
 };
+
+
 
 export default Home;
