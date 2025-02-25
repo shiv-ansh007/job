@@ -32,11 +32,22 @@ const Navbar = ({ showProfile, setShowProfile }) => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log('User Info:', user); // You can access user info here
+  
+      if (user) {
+        setUser({
+          displayName: user.displayName || "User",
+          email: user.email || "No Email",
+          photoURL: user.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.jpg",
+        });
+      }
+  
+      console.log("User Info:", user); // Debugging
     } catch (error) {
       console.error("Error during Google Sign-In:", error);
     }
   };
+  
+  
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -46,6 +57,22 @@ const Navbar = ({ showProfile, setShowProfile }) => {
         setIsScroll(false);
       }
     });
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser({
+          displayName: currentUser.displayName || "User",
+          email: currentUser.email || "No Email",
+          photoURL: currentUser.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.jpg",
+        });
+      } else {
+        setUser(null);
+      }
+    });
+  
+    return () => unsubscribe();
   }, []);
 
 
@@ -123,16 +150,26 @@ const Navbar = ({ showProfile, setShowProfile }) => {
               {/* Profile Dropdown Menu */}
               {isProfileOpen && (
                 <ul className="absolute right-0 bg-white shadow-md rounded-md w-56 mt-2">
-                  <li className="px-4 py-2 text-gray-700 font-semibold">{user.displayName || "Syed Mohammed"}</li>
-                  <li className="px-4 py-2 text-gray-500">{user.email || "photos78041@gmail.com"}</li>
+                 {user ? (
+  <>
+    <li className="px-4 py-2 text-gray-700 font-semibold">
+      {user.displayName || "Guest User"}
+    </li>
+    <li className="px-4 py-2 text-gray-500">
+      {user.email || "No Email Provided"}
+    </li>
+  </>
+) : (
+  <li className="px-4 py-2 text-gray-500">Not Signed In</li>
+)}
                   <li>
                     <div className="border-t border-gray-200">
                       <div className="px-4 py-2 text-sm text-gray-700 font-semibold">My Account</div>
-                      <li onClick={() => setShowProfile(true)}>
-                    <Link href="" className="block px-4 py-2 hover:bg-gray-200">
+                       
+                    <Link href="/profile" className="block px-4 py-2 hover:bg-gray-200">
                       Profile
                     </Link>
-                  </li>
+                  
                   
                       <Link href="/" className="block px-4 py-2 hover:bg-gray-200">Home</Link>
                       <Link href="/my-applications" className="block px-4 py-2 hover:bg-gray-200">My Applications</Link>

@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 99;
 }
 
 .Profile-module__QVVc4G__profileContainer {
@@ -18,7 +18,7 @@
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px #0000004d;
-  max-width: 500px;
+  max-width: 1000px;
   width: 90%;
   animation: .3s ease-in-out Profile-module__QVVc4G__fadeIn;
   position: relative;
@@ -40,7 +40,7 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: red;
+  background: none;
   color: #fff;
   border: none;
   padding: 8px 12px;
@@ -51,16 +51,19 @@
 }
 
 .Profile-module__QVVc4G__closeButton:hover {
-  background: #8b0000;
+  background: #eab308;
 }
 
 .Profile-module__QVVc4G__profileContainer {
-  max-width: 500px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #eab308;
   border-radius: 8px;
   background-color: #f9f9f9;
+  overflow-y: auto;
+  max-height: 90vh;
+  scrollbar-width: none;
 }
 
 .Profile-module__QVVc4G__profileTitle {
@@ -86,8 +89,9 @@
 }
 
 .Profile-module__QVVc4G__editButton {
-  background-color: #007bff;
+  background-color: #eab308;
   color: #fff;
+  margin: 20px 25px 10px 0;
 }
 
 .Profile-module__QVVc4G__saveButton {
@@ -96,7 +100,7 @@
 }
 
 .Profile-module__QVVc4G__cancelButton {
-  background-color: #dc3545;
+  background-color: red;
   color: #fff;
 }
 

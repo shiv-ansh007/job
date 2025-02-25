@@ -244,7 +244,14 @@ const Navbar = ({ showProfile, setShowProfile })=>{
         try {
             const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__c__as__signInWithPopup$3e$__["signInWithPopup"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"], provider);
             const user = result.user;
-            console.log('User Info:', user); // You can access user info here
+            if (user) {
+                setUser({
+                    displayName: user.displayName || "User",
+                    email: user.email || "No Email",
+                    photoURL: user.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
+                });
+            }
+            console.log("User Info:", user); // Debugging
         } catch (error) {
             console.error("Error during Google Sign-In:", error);
         }
@@ -260,6 +267,26 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                     }
                 }
             }["Navbar.useEffect"]);
+        }
+    }["Navbar.useEffect"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Navbar.useEffect": ()=>{
+            const unsubscribe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__y__as__onAuthStateChanged$3e$__["onAuthStateChanged"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"], {
+                "Navbar.useEffect.unsubscribe": (currentUser)=>{
+                    if (currentUser) {
+                        setUser({
+                            displayName: currentUser.displayName || "User",
+                            email: currentUser.email || "No Email",
+                            photoURL: currentUser.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
+                        });
+                    } else {
+                        setUser(null);
+                    }
+                }
+            }["Navbar.useEffect.unsubscribe"]);
+            return ({
+                "Navbar.useEffect": ()=>unsubscribe()
+            })["Navbar.useEffect"];
         }
     }["Navbar.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -281,17 +308,17 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                 clipRule: "evenodd"
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 61,
+                                lineNumber: 88,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/Navbar.jsx",
-                            lineNumber: 60,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.jsx",
-                        lineNumber: 56,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -303,12 +330,12 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                             alt: "TE Logo"
                         }, void 0, false, {
                             fileName: "[project]/components/Navbar.jsx",
-                            lineNumber: 71,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.jsx",
-                        lineNumber: 70,
+                        lineNumber: 97,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -321,12 +348,12 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.jsx",
-                                    lineNumber: 77,
+                                    lineNumber: 104,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 76,
+                                lineNumber: 103,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -336,12 +363,12 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                     children: "Jobs"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.jsx",
-                                    lineNumber: 85,
+                                    lineNumber: 112,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 84,
+                                lineNumber: 111,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -351,12 +378,12 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                     children: "Internships"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.jsx",
-                                    lineNumber: 93,
+                                    lineNumber: 120,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 92,
+                                lineNumber: 119,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -366,18 +393,18 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                     children: "Mentorship & Counseling"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.jsx",
-                                    lineNumber: 101,
+                                    lineNumber: 128,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 100,
+                                lineNumber: 127,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Navbar.jsx",
-                        lineNumber: 75,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -395,32 +422,43 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                             alt: "Profile"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.jsx",
-                                            lineNumber: 116,
+                                            lineNumber: 143,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/Navbar.jsx",
-                                        lineNumber: 115,
+                                        lineNumber: 142,
                                         columnNumber: 15
                                     }, this),
                                     isProfileOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                         className: "absolute right-0 bg-white shadow-md rounded-md w-56 mt-2",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "px-4 py-2 text-gray-700 font-semibold",
-                                                children: user.displayName || "Syed Mohammed"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/Navbar.jsx",
-                                                lineNumber: 126,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                        className: "px-4 py-2 text-gray-700 font-semibold",
+                                                        children: user.displayName || "Guest User"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/Navbar.jsx",
+                                                        lineNumber: 155,
+                                                        columnNumber: 5
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                        className: "px-4 py-2 text-gray-500",
+                                                        children: user.email || "No Email Provided"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/Navbar.jsx",
+                                                        lineNumber: 158,
+                                                        columnNumber: 5
+                                                    }, this)
+                                                ]
+                                            }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 className: "px-4 py-2 text-gray-500",
-                                                children: user.email || "photos78041@gmail.com"
+                                                children: "Not Signed In"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.jsx",
-                                                lineNumber: 127,
-                                                columnNumber: 19
+                                                lineNumber: 163,
+                                                columnNumber: 3
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -431,24 +469,17 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "My Account"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 167,
                                                             columnNumber: 23
                                                         }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                            onClick: ()=>setShowProfile(true),
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "",
-                                                                className: "block px-4 py-2 hover:bg-gray-200",
-                                                                children: "Profile"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/Navbar.jsx",
-                                                                lineNumber: 132,
-                                                                columnNumber: 21
-                                                            }, this)
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            href: "/profile",
+                                                            className: "block px-4 py-2 hover:bg-gray-200",
+                                                            children: "Profile"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 131,
-                                                            columnNumber: 23
+                                                            lineNumber: 169,
+                                                            columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             href: "/",
@@ -456,16 +487,16 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "Home"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 137,
+                                                            lineNumber: 174,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                            href: "/applications",
+                                                            href: "/my-applications",
                                                             className: "block px-4 py-2 hover:bg-gray-200",
                                                             children: "My Applications"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 138,
+                                                            lineNumber: 175,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -474,7 +505,7 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "My Bookmarks"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 139,
+                                                            lineNumber: 176,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -483,7 +514,7 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: " Resume Builder"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 140,
+                                                            lineNumber: 178,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -492,7 +523,7 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "Edit Preferences"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 141,
+                                                            lineNumber: 180,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -501,7 +532,7 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "Safety Tips"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 142,
+                                                            lineNumber: 181,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -510,18 +541,18 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "Help Center"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 143,
+                                                            lineNumber: 182,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/Navbar.jsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 166,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.jsx",
-                                                lineNumber: 128,
+                                                lineNumber: 165,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -533,7 +564,7 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "More"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 148,
+                                                            lineNumber: 187,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -542,7 +573,7 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "Manage Account"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 149,
+                                                            lineNumber: 188,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -551,30 +582,30 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                                             children: "Logout"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.jsx",
-                                                            lineNumber: 150,
+                                                            lineNumber: 189,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/Navbar.jsx",
-                                                    lineNumber: 147,
+                                                    lineNumber: 186,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.jsx",
-                                                lineNumber: 146,
+                                                lineNumber: 185,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Navbar.jsx",
-                                        lineNumber: 125,
+                                        lineNumber: 152,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 113,
+                                lineNumber: 140,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setIsAuthModalOpen(true),
@@ -582,7 +613,7 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                 children: "Sign In / Register"
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 159,
+                                lineNumber: 198,
                                 columnNumber: 13
                             }, this),
                             !user && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -591,19 +622,19 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                                 children: "Sign in with Google"
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.jsx",
-                                lineNumber: 164,
+                                lineNumber: 203,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Navbar.jsx",
-                        lineNumber: 111,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Navbar.jsx",
-                lineNumber: 54,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$AuthModal$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -611,13 +642,13 @@ const Navbar = ({ showProfile, setShowProfile })=>{
                 onClose: ()=>setIsAuthModalOpen(false)
             }, void 0, false, {
                 fileName: "[project]/components/Navbar.jsx",
-                lineNumber: 175,
+                lineNumber: 214,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 };
-_s(Navbar, "vCCh8mZIoHw072Av+W3kXVJdDz0=");
+_s(Navbar, "CIqn+0iwHf5eWCiU56IBKbqcTZs=");
 _c = Navbar;
 Navbar.propTypes = {
     setShowProfile: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].func.isRequired,

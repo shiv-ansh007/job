@@ -131,7 +131,7 @@ const Home = ()=>{
                                 children: "Why Choose Us?"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 110,
+                                lineNumber: 111,
                                 columnNumber: 7
                             }, this)
                         }, void 0, false, {
@@ -140,25 +140,26 @@ const Home = ()=>{
                             columnNumber: 7
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$tabs$2f$esm$2f$components$2f$Tab$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Tab$3e$__["Tab"], {
+                            onClick: ()=>handleTabClick("How to Apply"),
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                 whileHover: {
                                     scale: 1.1
                                 },
                                 whileTap: {
-                                    scale: 0.09
+                                    scale: 0.95
                                 },
                                 className: `px-4 py-2 cursor-pointer rounded-md ${activeTab === "How to Apply" ? "bg-yellow-500" : "bg-transparent"}`,
                                 onClick: ()=>handleTabClick("How to Apply"),
                                 children: "How to Apply"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 120,
+                                lineNumber: 121,
                                 columnNumber: 9
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/LandingPage.jsx",
-                            lineNumber: 119,
-                            columnNumber: 7
+                            lineNumber: 120,
+                            columnNumber: 9
                         }, this)
                     ]
                 }, void 0, true, {
@@ -176,7 +177,7 @@ const Home = ()=>{
                                     children: " Advantages over other Platforms "
                                 }, void 0, false, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 134,
+                                    lineNumber: 135,
                                     columnNumber: 7
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -185,26 +186,10 @@ const Home = ()=>{
                                             children: " - Comprehensive Platform:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 135,
+                                            lineNumber: 136,
                                             columnNumber: 13
                                         }, this),
                                         " Access a wide range of job opportunities, internships, and mentorship programs."
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 135,
-                                    columnNumber: 9
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Unique Opportunity:"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/LandingPage.jsx",
-                                            lineNumber: 136,
-                                            columnNumber: 14
-                                        }, this),
-                                        " Engage with state-run programs, schemes, and projects."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
@@ -214,13 +199,13 @@ const Home = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Hands-on Experience:"
+                                            children: " - Unique Opportunity:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
                                             lineNumber: 137,
-                                            columnNumber: 13
+                                            columnNumber: 14
                                         }, this),
-                                        " Gain invaluable experience in public administration and development services."
+                                        " Engage with state-run programs, schemes, and projects."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
@@ -230,13 +215,13 @@ const Home = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Exposure to Government Operations:"
+                                            children: " - Hands-on Experience:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
                                             lineNumber: 138,
                                             columnNumber: 13
                                         }, this),
-                                        " Understand the operational ecosystem of the government."
+                                        " Gain invaluable experience in public administration and development services."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
@@ -246,13 +231,13 @@ const Home = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Skill Enhancement:"
+                                            children: " - Exposure to Government Operations:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
                                             lineNumber: 139,
                                             columnNumber: 13
                                         }, this),
-                                        " Improve research and evaluation skills."
+                                        " Understand the operational ecosystem of the government."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
@@ -262,13 +247,13 @@ const Home = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Innovative Contribution:"
+                                            children: " - Skill Enhancement:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
                                             lineNumber: 140,
                                             columnNumber: 13
                                         }, this),
-                                        " Contribute innovative ideas to improve service delivery."
+                                        " Improve research and evaluation skills."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
@@ -278,13 +263,13 @@ const Home = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Mutually Beneficial Program:"
+                                            children: " - Innovative Contribution:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
                                             lineNumber: 141,
                                             columnNumber: 13
                                         }, this),
-                                        " Bridge the gap between service providers and recipients."
+                                        " Contribute innovative ideas to improve service delivery."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
@@ -294,13 +279,13 @@ const Home = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Youth Empowerment:"
+                                            children: " - Mutually Beneficial Program:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
                                             lineNumber: 142,
                                             columnNumber: 13
                                         }, this),
-                                        " Empower youth and enhance their understanding of public services."
+                                        " Bridge the gap between service providers and recipients."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
@@ -310,44 +295,60 @@ const Home = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                            children: " - Impact on Society:"
+                                            children: " - Youth Empowerment:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/LandingPage.jsx",
                                             lineNumber: 143,
+                                            columnNumber: 13
+                                        }, this),
+                                        " Empower youth and enhance their understanding of public services."
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/LandingPage.jsx",
+                                    lineNumber: 143,
+                                    columnNumber: 9
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                            children: " - Impact on Society:"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/LandingPage.jsx",
+                                            lineNumber: 144,
                                             columnNumber: 13
                                         }, this),
                                         " Foster a deeper understanding of how public services affect society."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/LandingPage.jsx",
-                                    lineNumber: 143,
+                                    lineNumber: 144,
                                     columnNumber: 9
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/LandingPage.jsx",
-                            lineNumber: 133,
+                            lineNumber: 134,
                             columnNumber: 5
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 132,
+                        lineNumber: 133,
                         columnNumber: 3
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/LandingPage.jsx",
-                    lineNumber: 131,
+                    lineNumber: 132,
                     columnNumber: 5
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$tabs$2f$esm$2f$components$2f$TabPanel$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TabPanel$3e$__["TabPanel"], {
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "text-left rounded-lg bg-yellow-200 p-4 ",
+                        className: "text-left text-white rounded-lg bg-yellow-600 p-4 ",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Follow these simple steps to apply for the Rajasthan Government's internship program:"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 150,
+                                lineNumber: 151,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -358,26 +359,10 @@ const Home = ()=>{
                                                 children: "Step 1:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
-                                                lineNumber: 154,
-                                                columnNumber: 13
-                                            }, this),
-                                            " Visit our official internship platform."
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 154,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: "Step 2:"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/LandingPage.jsx",
                                                 lineNumber: 155,
                                                 columnNumber: 13
                                             }, this),
-                                            " Register by providing your personal details and academic background."
+                                            " Visit our official internship platform."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
@@ -387,13 +372,13 @@ const Home = ()=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: "Step 3:"
+                                                children: "Step 2:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
                                                 lineNumber: 156,
                                                 columnNumber: 13
                                             }, this),
-                                            " Browse available programs and choose the one that aligns with your interests."
+                                            " Register by providing your personal details and academic background."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
@@ -403,13 +388,13 @@ const Home = ()=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: "Step 4:"
+                                                children: "Step 3:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
                                                 lineNumber: 157,
                                                 columnNumber: 13
                                             }, this),
-                                            " Submit your application along with any necessary documents (e.g., resume, statement of purpose)."
+                                            " Browse available programs and choose the one that aligns with your interests."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
@@ -419,13 +404,13 @@ const Home = ()=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: "Step 5:"
+                                                children: "Step 4:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
                                                 lineNumber: 158,
                                                 columnNumber: 13
                                             }, this),
-                                            " Await confirmation via email and instructions for the next steps."
+                                            " Submit your application along with any necessary documents (e.g., resume, statement of purpose)."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
@@ -435,41 +420,57 @@ const Home = ()=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: "Step 6:"
+                                                children: "Step 5:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/LandingPage.jsx",
                                                 lineNumber: 159,
+                                                columnNumber: 13
+                                            }, this),
+                                            " Await confirmation via email and instructions for the next steps."
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/LandingPage.jsx",
+                                        lineNumber: 159,
+                                        columnNumber: 9
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                children: "Step 6:"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/LandingPage.jsx",
+                                                lineNumber: 160,
                                                 columnNumber: 13
                                             }, this),
                                             " Join the program and start your internship experience."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 159,
+                                        lineNumber: 160,
                                         columnNumber: 9
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 153,
+                                lineNumber: 154,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Ensure all information is accurate to increase your chances of being selected. We look forward to having you as part of the program!"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 161,
+                                lineNumber: 162,
                                 columnNumber: 7
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 149,
+                        lineNumber: 150,
                         columnNumber: 7
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/LandingPage.jsx",
-                    lineNumber: 148,
+                    lineNumber: 149,
                     columnNumber: 6
                 }, this)
             ]
@@ -492,7 +493,7 @@ const Home = ()=>{
                                 children: "Empowering Your Career Journey"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 173,
+                                lineNumber: 174,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -500,7 +501,7 @@ const Home = ()=>{
                                 children: "Find your dream job, internship, or mentor in one place."
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 174,
+                                lineNumber: 175,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -509,40 +510,40 @@ const Home = ()=>{
                                     "An Interactive Job and Internship Platform for Technical Education",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 179,
+                                        lineNumber: 180,
                                         columnNumber: 13
                                     }, this),
                                     "Department, Govt. of Rajasthan"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 177,
+                                lineNumber: 178,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-8",
+                                className: "mt-8 ",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/resumebuilder",
-                                        className: "bg-white text-yellow-600 font-semibold py-2 px-4 rounded mr-4",
-                                        children: "Get Started"
+                                        className: "bg-white text-yellow-600 font-semibold py-2 px-4 rounded  mr-4",
+                                        children: "Resume Builder"
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 184,
+                                        lineNumber: 185,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "bg-transparent border border-white text-white font-semibold py-2 px-4 rounded",
+                                        className: "bg-transparent border border-white text-white font-semibold py-2 px-4 mt-4 rounded",
                                         children: "Learn More"
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 187,
+                                        lineNumber: 188,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 183,
+                                lineNumber: 184,
                                 columnNumber: 11
                             }, this),
                             !user && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -550,13 +551,13 @@ const Home = ()=>{
                                 children: "Sign Up Now"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 192,
+                                lineNumber: 193,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 172,
+                        lineNumber: 173,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -578,7 +579,7 @@ const Home = ()=>{
                                 children: '" राजस्थान सरकार द्वारा इंटर्नशिप और नौकरियों को बढ़ावा देना "'
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 203,
+                                lineNumber: 204,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -586,7 +587,7 @@ const Home = ()=>{
                                 children: "- विभिन्न क्षेत्रों में इंटर्नशिप और नौकरी के अवसरों के लिए हमारे प्लेटफ़ॉर्म का उपयोग करें।"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 206,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -594,7 +595,7 @@ const Home = ()=>{
                                 children: "- राजस्थान सरकार ने AI क्षेत्र में प्रशिक्षण और इंटर्नशिप के अवसर प्रदान किए हैं।"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 210,
+                                lineNumber: 211,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -602,19 +603,19 @@ const Home = ()=>{
                                 children: "- सरकार ने AI आधारित परियोजनाओं की शुरुआत की है, जो युवाओं को वास्तविक दुनिया की समस्याओं को हल करने का अवसर प्रदान करती हैं।"
                             }, void 0, false, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 214,
+                                lineNumber: 215,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 197,
+                        lineNumber: 198,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/LandingPage.jsx",
-                lineNumber: 171,
+                lineNumber: 172,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -623,18 +624,18 @@ const Home = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(WhyChooseUsTabs, {}, void 0, false, {
                             fileName: "[project]/components/LandingPage.jsx",
-                            lineNumber: 224,
+                            lineNumber: 225,
                             columnNumber: 9
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 223,
+                        lineNumber: 224,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 md:grid-cols-3 gap-6 mt-6",
                         children: features.map((feature, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: `p-4 border rounded-lg shadow-lg cursor-pointer ${activeFeature === index ? "bg-yellow-500" : "bg-blue-100"}`,
+                                className: `p-4 border rounded-lg shadow-lg cursor-pointer ${activeFeature === index ? "bg-yellow-500" : "bg-white"}`,
                                 onClick: ()=>toggleFeature(index),
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -642,7 +643,7 @@ const Home = ()=>{
                                         children: feature.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 237,
+                                        lineNumber: 238,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -650,30 +651,30 @@ const Home = ()=>{
                                         children: expandedFeature === index ? feature.fullDescription : feature.shortDescription
                                     }, void 0, false, {
                                         fileName: "[project]/components/LandingPage.jsx",
-                                        lineNumber: 238,
+                                        lineNumber: 239,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/LandingPage.jsx",
-                                lineNumber: 230,
+                                lineNumber: 231,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/LandingPage.jsx",
-                        lineNumber: 228,
+                        lineNumber: 229,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/LandingPage.jsx",
-                lineNumber: 221,
+                lineNumber: 222,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/LandingPage.jsx",
-        lineNumber: 170,
+        lineNumber: 171,
         columnNumber: 5
     }, this);
 };
@@ -1397,6 +1398,31 @@ const EditProfile = ()=>{
         const value = Array.from(e.target.selectedOptions, (option)=>option.value);
         setSkills(value);
     };
+    const EditProfile = ({ onProfileUpdate: onProfileUpdate1 })=>{
+        const handleSubmit = async (e)=>{
+            e.preventDefault();
+            const user = auth.currentUser;
+            if (user) {
+                let resumeURL = userData.resume;
+                if (resumeFile) {
+                    const resumeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ref"])(storage, `resumes/${user.uid}`);
+                    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["uploadBytes"])(resumeRef, resumeFile);
+                    resumeURL = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getDownloadURL"])(resumeRef);
+                }
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(db, "users", user.uid), {
+                    displayName: userData.displayName,
+                    email: userData.email,
+                    phoneNumber: userData.phoneNumber,
+                    location: userData.location,
+                    resume: resumeURL,
+                    skills: skills,
+                    experience: experience
+                });
+                alert("Profile updated successfully!");
+                onProfileUpdate1(); // Notify parent component
+            }
+        };
+    };
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const user = auth.currentUser;
@@ -1417,10 +1443,11 @@ const EditProfile = ()=>{
                 experience: experience
             });
             alert("Profile updated successfully!");
+            onProfileUpdate();
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-        className: "bg-yellow-500 m-4 max-h-[400px] overflow-y-auto overflow-x-hidden rounded-lg  pt-6 px-4 py-4",
+        className: "bg-yellow-500 m-4 max-h-[400px] overflow-y-auto   no-scrollbar  rounded-lg  pt-6 px-4 py-4",
         onSubmit: handleSubmit,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1434,7 +1461,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 73,
+                lineNumber: 102,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1448,7 +1475,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 80,
+                lineNumber: 109,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1462,7 +1489,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 87,
+                lineNumber: 116,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1476,7 +1503,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 94,
+                lineNumber: 123,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1485,11 +1512,11 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 101,
+                lineNumber: 130,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                className: "w-full  rounded-lg  px-2 py-2",
+                className: "w-full no-scrollbar  rounded-lg  px-2 py-2",
                 multiple: true,
                 onChange: handleSkillsChange,
                 children: [
@@ -1498,7 +1525,7 @@ const EditProfile = ()=>{
                         children: "JavaScript"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 105,
+                        lineNumber: 134,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1506,7 +1533,7 @@ const EditProfile = ()=>{
                         children: "Python"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 106,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1514,7 +1541,7 @@ const EditProfile = ()=>{
                         children: "AI"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 107,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1522,23 +1549,23 @@ const EditProfile = ()=>{
                         children: "ML"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 108,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 104,
+                lineNumber: 133,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                 value: experience,
                 onChange: (e)=>setExperience(e.target.value),
-                className: "rounded-lg mb-2 px-3 mt-4 py-3 h-40 w-full ",
+                className: "rounded-lg mb-2  px-3 mt-4 py-3 h-40 w-full ",
                 placeholder: "Experience"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 111,
+                lineNumber: 140,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1549,22 +1576,22 @@ const EditProfile = ()=>{
                     children: "Update Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/EditProfile.jsx",
-                    lineNumber: 118,
+                    lineNumber: 147,
                     columnNumber: 7
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 117,
+                lineNumber: 146,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/EditProfile.jsx",
-        lineNumber: 71,
+        lineNumber: 99,
         columnNumber: 5
     }, this);
 };
-_s(EditProfile, "PIT/vKoqEjwJnuM8B+RhHgf8JbE=");
+_s(EditProfile, "56AA0I3PYb3HlwNjA3aF3uwBSEY=");
 _c = EditProfile;
 const __TURBOPACK__default__export__ = EditProfile;
 var _c;
@@ -1607,30 +1634,31 @@ const Profile = ({ setShowProfile, onEdit })=>{
             const currentUser = auth.currentUser;
             setUser(auth.currentUser);
         }
-    }["Profile.useEffect"], [
-        user
-    ]); // Re-run when `user` changes
+    }["Profile.useEffect"], []); // Re-run when `user` changes
     const onClick = ()=>{
         setShowProfile((prev)=>!prev);
     };
-    const handleUpdateProfile = ()=>{
-        if (user) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__ak__as__updateProfile$3e$__["updateProfile"])(user, {
-                displayName: "New Display Name"
-            }).then(()=>{
-                console.log("Profile updated successfully");
-                const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
-                setUser(auth.currentUser);
-                return user.reload();
-            }).then(()=>{
-                const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
-                setUser(auth.currentUser); // Update state with new data
-            }).catch((error)=>{
-                console.error("Error updating profile:", error);
-            });
-        } else {
+    const handleUpdateProfile = async ()=>{
+        if (!user) {
             console.log("No user is signed in.");
+            return;
         }
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__ak__as__updateProfile$3e$__["updateProfile"])(user, {
+                displayName: "New Display Name"
+            });
+            console.log("Profile updated successfully");
+            await user.reload(); // Ensure Firebase reloads user data
+            const updatedUser = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])().currentUser; // Get the latest user data
+            setUser(updatedUser);
+        } catch (error) {
+            console.error("Error updating profile:", error);
+        }
+    };
+    const handleProfileUpdate = ()=>{
+        const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
+        const currentUser = auth.currentUser;
+        setUser(currentUser); // Refresh user data
     };
     const handleEdit = ()=>{
         setIsEditing(true);
@@ -1655,7 +1683,7 @@ const Profile = ({ setShowProfile, onEdit })=>{
                     children: "✖"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 66,
+                    lineNumber: 70,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1663,20 +1691,21 @@ const Profile = ({ setShowProfile, onEdit })=>{
                     children: "Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 69,
+                    lineNumber: 73,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mt-4",
+                    className: "mt-4  px-4 py-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg",
+                            className: "text-lg rounded-lg py-2  border-2 border-yellow-400",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                    children: "Name:"
+                                    className: "px-2",
+                                    children: "Name :"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 72,
+                                    lineNumber: 76,
                                     columnNumber: 13
                                 }, this),
                                 " ",
@@ -1684,17 +1713,18 @@ const Profile = ({ setShowProfile, onEdit })=>{
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 71,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg",
+                            className: "text-lg rounded-lg py-2 mt-2 border-2 border-yellow-400",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                    children: "Email:"
+                                    className: "px-2",
+                                    children: "Email :"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 75,
+                                    lineNumber: 79,
                                     columnNumber: 13
                                 }, this),
                                 " ",
@@ -1702,17 +1732,18 @@ const Profile = ({ setShowProfile, onEdit })=>{
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 74,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg",
+                            className: "text-lg rounded-lg py-2 mt-2 border-2 border-yellow-400",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                    children: "Phone:"
+                                    className: "px-2",
+                                    children: "Phone :"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 82,
                                     columnNumber: 13
                                 }, this),
                                 " ",
@@ -1720,17 +1751,18 @@ const Profile = ({ setShowProfile, onEdit })=>{
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 77,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg",
+                            className: "text-lg rounded-lg py-2 mt-2 border-2 border-yellow-400",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                    children: "Location:"
+                                    className: "px-2",
+                                    children: "Location :"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 81,
+                                    lineNumber: 85,
                                     columnNumber: 13
                                 }, this),
                                 " ",
@@ -1738,13 +1770,13 @@ const Profile = ({ setShowProfile, onEdit })=>{
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 80,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 70,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1753,7 +1785,7 @@ const Profile = ({ setShowProfile, onEdit })=>{
                     children: "Update Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 84,
+                    lineNumber: 88,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1762,51 +1794,47 @@ const Profile = ({ setShowProfile, onEdit })=>{
                     children: "Edit Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 87,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].container,
                     children: isEditing ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$EditProfile$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        onSave: handleSave,
-                        onCancel: handleCancel
+                        onProfileUpdate: handleProfileUpdate
                     }, void 0, false, {
                         fileName: "[project]/components/Profile.jsx",
-                        lineNumber: 92,
+                        lineNumber: 96,
                         columnNumber: 13
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                children: "Profile"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {}, void 0, false, {
                                 fileName: "[project]/components/Profile.jsx",
-                                lineNumber: 95,
+                                lineNumber: 99,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: handleEdit,
-                                children: "Edit Profile"
+                                onClick: handleEdit
                             }, void 0, false, {
                                 fileName: "[project]/components/Profile.jsx",
-                                lineNumber: 97,
+                                lineNumber: 101,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 90,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/Profile.jsx",
-            lineNumber: 65,
+            lineNumber: 69,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/Profile.jsx",
-        lineNumber: 64,
+        lineNumber: 68,
         columnNumber: 5
     }, this);
 };

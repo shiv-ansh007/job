@@ -5,7 +5,7 @@ import Internships from "@/components/Internships";
 import Mentorship from "@/components/Mentorship";
 import { useState } from "react";
 import loginpage from "@/components/Login/Loginpage";
-import Profile from "@/components/Profile";
+ 
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
 
