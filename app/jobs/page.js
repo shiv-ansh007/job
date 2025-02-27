@@ -115,13 +115,13 @@ const Jobs = () => {
                 ) : (
                   <button
                     onClick={() => toggleJobDetails(job.id)}
-                    className="mt-4 px-4 mr-4  py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
+                    className="mt-4 px-4 mr-2  py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
                   >
                     Click to know more
                   </button>
                 )}
 
-                <button className="mt-4 px-4  py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors duration-300" onClick={() => openForm(job)}>
+                <button className="mt-4 px-4  py-2 bg-yellow-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300" onClick={() => openForm(job)}>
                   Apply Now
                 </button>
               </div>

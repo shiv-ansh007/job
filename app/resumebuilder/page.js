@@ -89,7 +89,7 @@ const ResumeBuilder = () => {
     <>
       <Navbar />
       <div className="p-10 mt-10 max-w-4xl mx-auto">
-        <h1 className="text-3xl mt-10  font-bold mb-2">Resume Builder</h1>
+        <h1 className="text-3xl font-bold mb-4">Resume Builder</h1>
 
         <div className="grid grid-cols-2 gap-6 bg-gray-100 p-6 rounded-lg shadow-md">
           {/* ✅ Personal Information Step */}

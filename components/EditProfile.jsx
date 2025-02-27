@@ -96,8 +96,7 @@ const EditProfile = () => {
   };
 
   return (
-    <form className="bg-yellow-500 m-4 max-h-[400px] overflow-y-auto   no-scrollbar  rounded-lg  pt-6 px-4 py-4" 
-    onSubmit={handleSubmit}>
+    <form className="bg-yellow-500 m-4 max-h-[400px] overflow-y-auto overflow-x-hidden rounded-lg  pt-6 px-4 py-4" onSubmit={handleSubmit}>
     
       <input
         type="text"

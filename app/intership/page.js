@@ -4,9 +4,6 @@ import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import { useEffect, useState } from "react";
 
- 
-import Link from "next/link";
-
 const InternshipList = () => {
   const [internships, setInternships] = useState([]);
   const [query, setQuery] = useState("");
@@ -49,46 +46,29 @@ const InternshipList = () => {
         </div>
 
         {/* Internship List */}
-  
-
-<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-  {internships.map((intern, index) => (
-    <li
-      key={index}
-      className="p-6 bg-white rounded-lg shadow-md border border-yellow-600 
-                hover:shadow-xl hover:bg-yellow-200 hover:scale-105 hover:text-yellow-800 
-                transition duration-300 transform"
-    >
-      <h2 className="text-xl font-semibold">{intern.internship_title}</h2>
-      <p><strong>Company:</strong> {intern.company_name}</p>
-      <p><strong>Location:</strong> {intern.location}</p>
-      <p><strong>Start Date:</strong> {intern.start_date}</p>
-      <p><strong>Duration:</strong> {intern.duration}</p>
-      <p><strong>Stipend:</strong> {intern.stipend}</p>
-      
-      {/* Link to myaplication page with internship details */}
-      <Link
-  href={{
-    pathname: "/myaplication",
-    query: {
-      title: encodeURIComponent(intern.internship_title),
-      company: encodeURIComponent(intern.company_name),
-      location: encodeURIComponent(intern.location),
-      start_date: encodeURIComponent(intern.start_date),
-      duration: encodeURIComponent(intern.duration),
-      stipend: encodeURIComponent(intern.stipend),
-    },
-  }}
-  className="mt-4 inline-block bg-yellow-600 text-white font-semibold py-2 px-4 
-             rounded-lg hover:bg-yellow-700 transition duration-300"
->
-  Apply Now
-</Link>
-    </li>
-  ))}
-</ul>
-
-
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {internships.length > 0 ? (
+            internships.map((intern, index) => (
+              <li
+                key={index}
+                className="p-6 bg-white rounded-lg shadow-md border border-yellow-600 
+                          hover:shadow-xl hover:bg-yellow-200 hover:scale-105 hover:text-yellow-800 
+                          transition duration-300 transform"
+              >
+                <h2 className="text-xl font-semibold">{intern.internship_title}</h2>
+                <p><strong>Company:</strong> {intern.company_name}</p>
+                <p><strong>Location:</strong> {intern.location}</p>
+                <p><strong>Start Date:</strong> {intern.start_date}</p>
+                <p><strong>Duration:</strong> {intern.duration}</p>
+                <p><strong>Stipend:</strong> {intern.stipend}</p>
+              </li>
+            ))
+          ) : (
+            <p className="text-gray-900 text-center col-span-full bg-yellow-300 p-4 rounded-lg">
+              No internships found.
+            </p>
+          )}
+        </ul>
       </div>
 
       <Footer />

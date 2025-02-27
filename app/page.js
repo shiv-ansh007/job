@@ -22,6 +22,8 @@ export default function Home({ children }) {
       <AuthProvider>
         {showProfile ? <Profile setShowProfile={setShowProfile} /> : null}
         <Navbar showProfile={showProfile} setShowProfile={setShowProfile} />
+        
+      
         <LandingPage />
         {children}
         <Footer />

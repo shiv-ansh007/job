@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import { userId } from "firebase/auth";
 import { getAuth, updateProfile } from "firebase/auth";
-import styles from "./Profile.module.css";
-import EditProfile from "./EditProfile";
+
 import PropTypes from "prop-types";
 
 import { db } from "../firebase"; // Import Firestore
@@ -21,48 +21,52 @@ const Profile = ({ setShowProfile, onEdit }) => {
   useEffect(() => {
     const auth = getAuth();
     const currentUser = auth.currentUser;
-  
-    if (!currentUser) return;
-  
-    setUser(currentUser); // Ensure user state is set properly
-  
     const fetchResume = async () => {
-      const userId = currentUser.uid; // Ensure userId is retrieved correctly
+      if (!userId) return;
+
       const docRef = doc(db, "resumes", userId);
       const docSnap = await getDoc(docRef);
-  
+
       if (docSnap.exists()) {
         setResumeData(docSnap.data());
       }
     };
-  
+
     fetchResume();
-  }, [user]); // Re-run when `user` changes
-  
+    [userId]
+    setUser(auth.currentUser);
+}, [user]); // Re-run when `user` changes
   
 
   const onClick = () => {
     setShowProfile((prev) => !prev);
   };
 
-  const handleUpdateProfile = async () => {
-    if (!user) {
+  const handleUpdateProfile = () => {
+    if (user) {
+      updateProfile(user, {
+        displayName: "New Display Name",
+        
+        // Optionally, update the photo URL
+        // photoURL: "https://example.com/new-profile-photo.jpg"
+      })
+        .then(() => {
+          console.log("Profile updated successfully");
+          const auth = getAuth();
+          setUser(auth.currentUser );
+          return user.reload();
+        })
+        .then(() => {
+          const auth = getAuth();
+          setUser(auth.currentUser); // Update state with new data
+        })
+        .catch((error) => {
+          console.error("Error updating profile:", error);
+        });
+    } else {
       console.log("No user is signed in.");
-      return;
-    }
-  
-    try {
-      await updateProfile(user, { displayName: "New DisName" });
-      await user.reload(); // Ensure Firebase refreshes user data
-      const updatedUser = getAuth().currentUser; // Get the latest user info
-      setUser(updatedUser); // Update state with refreshed user data
-      console.log("Profile updated successfully:", updatedUser);
-    } catch (error) {
-      console.error("Error updating profile:", error);
     }
   };
-  
- 
 
   const handleChange = (e) => {
     setResumeData({ ...resumeData, [e.target.name]: e.target.value });
@@ -149,9 +153,9 @@ const Profile = ({ setShowProfile, onEdit }) => {
             <EditProfile onSave={handleSave} onCancel={handleCancel} />
           ) : (
             <>
-              <h1></h1>
+              <h1>Profile</h1>
               {/* Display user information */}
-              <button onClick={handleEdit}></button>
+              <button onClick={handleEdit}>Edit Profile</button>
             </>
           )}
         </div>
