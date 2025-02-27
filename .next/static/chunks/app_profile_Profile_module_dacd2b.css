@@ -1,0 +1,122 @@
+/* [project]/app/profile/Profile.module.css [app-client] (css) */
+.Profile-module__lJERFq__profileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0009;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.Profile-module__lJERFq__profileContainer {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #0000004d;
+  max-width: 1000px;
+  width: 90%;
+  animation: .3s ease-in-out Profile-module__lJERFq__fadeIn;
+  position: relative;
+}
+
+@keyframes Profile-module__lJERFq__fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.Profile-module__lJERFq__closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background .3s;
+}
+
+.Profile-module__lJERFq__closeButton:hover {
+  background: #eab308;
+}
+
+.Profile-module__lJERFq__profileContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #eab308;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  max-height: 90vh;
+  scrollbar-width: none;
+}
+
+.Profile-module__lJERFq__profileTitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Profile-module__lJERFq__profileDetails {
+  margin-bottom: 20px;
+}
+
+.Profile-module__lJERFq__profileItem {
+  margin: 10px 0;
+}
+
+.Profile-module__lJERFq__editButton, .Profile-module__lJERFq__saveButton, .Profile-module__lJERFq__cancelButton {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Profile-module__lJERFq__editButton {
+  background-color: #eab308;
+  color: #fff;
+  margin: 20px 25px 10px 0;
+}
+
+.Profile-module__lJERFq__saveButton {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.Profile-module__lJERFq__cancelButton {
+  background-color: red;
+  color: #fff;
+}
+
+.Profile-module__lJERFq__profileForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.Profile-module__lJERFq__profileLabel {
+  margin-bottom: 10px;
+}
+
+.Profile-module__lJERFq__profileInput {
+  padding: 8px;
+  margin-top: 5px;
+}
+
+
+/*# sourceMappingURL=app_profile_Profile_module_dacd2b.css.map*/

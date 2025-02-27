@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/Hp/Desktop/project-hack/job/app/page.js"],"sourcesContent":[" \"use client\";\r\n\r\n \r\nimport { useState } from \"react\";\r\nimport Navbar from \"./components/Navbar\";\r\nimport Footer from \"./components/Footer\"; // If you're using Footer\r\n \r\n \r\nimport { useRouter } from \"next/navigation\";\r\n\r\nexport default function Home() {\r\n  const [showProfile, setShowProfile] = useState(false);\r\n  const router = useRouter();\r\n\r\n  return (\r\n    <>\r\n        \r\n      \r\n        \r\n\r\n        \r\n       \r\n      \r\n    </>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;AAGA;AACA;AACA,6NAA0C,yBAAyB;AAGnE;;;AARC;;;;;AAUc,SAAS;;IACtB,MAAM,CAAC,aAAa,eAAe,GAAG,CAAA,GAAA,6JAAA,CAAA,WAAQ,AAAD,EAAE;IAC/C,MAAM,SAAS,CAAA,GAAA,qIAAA,CAAA,YAAS,AAAD;IAEvB,qBACE;AAUJ;GAfwB;;QAEP,qIAAA,CAAA,YAAS;;;KAFF"}},
+    {"offset": {"line": 39, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 49, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/Hp/Desktop/project-hack/job/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}},
+    {"offset": {"line": 50, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
