@@ -53,7 +53,7 @@ const Mentorship = () => {
 
   const handleConfirmSelection = () => {
     if (selectedMentor) {
-      alert(`You have selected ${selectedMentor.name} as your mentor.`);
+      alert('You have selected ${selectedMentor.name} as your mentor.');
       // Implement further logic as needed, e.g., sending data to a server
     }
   };

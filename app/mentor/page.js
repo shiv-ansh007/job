@@ -1,33 +1,35 @@
-'use client'
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import React  from 'react';
-import Profile from '@/components/Profile';
-import { useState } from 'react';
+"use client";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import React from "react";
+import Profile from "@/components/Profile";
+import { useState } from "react";
+import MentorChat from "@/components/MentorChat";  
+
 const mentors = [
   {
     id: 1,
-    name: 'Alice Johnson',
-    field: 'Artificial Intelligence',
-    bio: 'Expert in AI with 10 years of experience in machine learning and neural networks.',
-    experience: '10 years',
-    profileImage: '/images/alice.jpg',
+    name: "Alice Johnson",
+    field: "Artificial Intelligence",
+    bio: "Expert in AI with 10 years of experience in machine learning and neural networks.",
+    experience: "10 years",
+    profileImage: "/images/alice.jpg",
   },
   {
     id: 2,
-    name: 'Bob Smith',
-    field: 'Web Development',
-    bio: 'Full-stack developer specializing in modern web technologies.',
-    experience: '8 years',
-    profileImage: '/images/bob.jpg',
+    name: "Bob Smith",
+    field: "Web Development",
+    bio: "Full-stack developer specializing in modern web technologies.",
+    experience: "8 years",
+    profileImage: "/images/bob.jpg",
   },
   {
     id: 3,
-    name: 'Carol Williams',
-    field: 'Data Science',
-    bio: 'Data scientist with a passion for big data and analytics.',
-    experience: '5 years',
-    profileImage: '/images/carol.jpg',
+    name: "Carol Williams",
+    field: "Data Science",
+    bio: "Data scientist with a passion for big data and analytics.",
+    experience: "5 years",
+    profileImage: "/images/carol.jpg",
   },
   // Add more mentors as needed
 ];

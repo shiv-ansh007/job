@@ -417,6 +417,31 @@ const EditProfile = ()=>{
         const value = Array.from(e.target.selectedOptions, (option)=>option.value);
         setSkills(value);
     };
+    const EditProfile = ({ onProfileUpdate: onProfileUpdate1 })=>{
+        const handleSubmit = async (e)=>{
+            e.preventDefault();
+            const user = auth.currentUser;
+            if (user) {
+                let resumeURL = userData.resume;
+                if (resumeFile) {
+                    const resumeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ref"])(storage, `resumes/${user.uid}`);
+                    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["uploadBytes"])(resumeRef, resumeFile);
+                    resumeURL = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getDownloadURL"])(resumeRef);
+                }
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(db, "users", user.uid), {
+                    displayName: userData.displayName,
+                    email: userData.email,
+                    phoneNumber: userData.phoneNumber,
+                    location: userData.location,
+                    resume: resumeURL,
+                    skills: skills,
+                    experience: experience
+                });
+                alert("Profile updated successfully!");
+                onProfileUpdate1(); // Notify parent component
+            }
+        };
+    };
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const user = auth.currentUser;
@@ -437,6 +462,7 @@ const EditProfile = ()=>{
                 experience: experience
             });
             alert("Profile updated successfully!");
+            onProfileUpdate();
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -454,7 +480,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 73,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -468,7 +494,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 80,
+                lineNumber: 108,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -482,7 +508,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 87,
+                lineNumber: 115,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -496,7 +522,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 94,
+                lineNumber: 122,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -505,11 +531,11 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 101,
+                lineNumber: 129,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                className: "w-full  rounded-lg  px-2 py-2",
+                className: "w-full no-scrollbar  rounded-lg  px-2 py-2",
                 multiple: true,
                 onChange: handleSkillsChange,
                 children: [
@@ -518,7 +544,7 @@ const EditProfile = ()=>{
                         children: "JavaScript"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 105,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -526,7 +552,7 @@ const EditProfile = ()=>{
                         children: "Python"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 106,
+                        lineNumber: 134,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -534,7 +560,7 @@ const EditProfile = ()=>{
                         children: "AI"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 107,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -542,23 +568,23 @@ const EditProfile = ()=>{
                         children: "ML"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 108,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 104,
+                lineNumber: 132,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                 value: experience,
                 onChange: (e)=>setExperience(e.target.value),
-                className: "rounded-lg mb-2 px-3 mt-4 py-3 h-40 w-full ",
+                className: "rounded-lg mb-2  px-3 mt-4 py-3 h-40 w-full ",
                 placeholder: "Experience"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 111,
+                lineNumber: 139,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -569,22 +595,22 @@ const EditProfile = ()=>{
                     children: "Update Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/EditProfile.jsx",
-                    lineNumber: 118,
+                    lineNumber: 146,
                     columnNumber: 7
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 117,
+                lineNumber: 145,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/EditProfile.jsx",
-        lineNumber: 71,
+        lineNumber: 99,
         columnNumber: 5
     }, this);
 };
-_s(EditProfile, "PIT/vKoqEjwJnuM8B+RhHgf8JbE=");
+_s(EditProfile, "56AA0I3PYb3HlwNjA3aF3uwBSEY=");
 _c = EditProfile;
 const __TURBOPACK__default__export__ = EditProfile;
 var _c;
@@ -617,73 +643,65 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
-const Profile = ({ setShowProfile, onEdit })=>{
+const Profile = ({ setShowProfile })=>{
     _s();
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isEditing, setIsEditing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Profile.useEffect": ()=>{
-            const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
             const currentUser = auth.currentUser;
-            setUser(auth.currentUser);
+            if (currentUser) {
+                setUser(currentUser);
+            }
         }
-    }["Profile.useEffect"], [
-        user
-    ]); // Re-run when `user` changes
-    const onClick = ()=>{
+    }["Profile.useEffect"], []); // Runs only once when the component mounts
+    const handleCloseProfile = ()=>{
         setShowProfile((prev)=>!prev);
     };
-    const handleUpdateProfile = ()=>{
-        if (user) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__ak__as__updateProfile$3e$__["updateProfile"])(user, {
-                displayName: "New Display Name"
-            }).then(()=>{
-                console.log("Profile updated successfully");
-                const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
-                setUser(auth.currentUser);
-                return user.reload();
-            }).then(()=>{
-                const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
-                setUser(auth.currentUser); // Update state with new data
-            }).catch((error)=>{
-                console.error("Error updating profile:", error);
-            });
-        } else {
+    const handleUpdateProfile = async ()=>{
+        if (!user) {
             console.log("No user is signed in.");
+            return;
         }
-    };
-    const handleEdit = ()=>{
-        setIsEditing(true);
-    };
-    const handleSave = ()=>{
-        setIsEditing(false);
-    // Optionally, refresh user data
-    };
-    const handleCancel = ()=>{
-        setIsEditing(false);
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__ak__as__updateProfile$3e$__["updateProfile"])(user, {
+                displayName: user.displayName || "User Name",
+                phoneNumber: user.phoneNumber || "",
+                photoURL: user.photoURL || ""
+            });
+            // Reload user data
+            await auth.currentUser.reload();
+            setUser({
+                ...auth.currentUser
+            }); // Update state with new user data
+            console.log("Profile updated successfully");
+        } catch (error) {
+            console.error("Error updating profile:", error);
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].profileOverlay,
-        onClick: onClick,
+        onClick: handleCloseProfile,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].profileContainer,
             onClick: (e)=>e.stopPropagation(),
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].closeButton,
-                    onClick: onClick,
+                    onClick: handleCloseProfile,
                     children: "✖"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 66,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                    className: "text-3xl font-bold z-index:99 text-center",
+                    className: "text-3xl font-bold text-center",
                     children: "Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 69,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -696,15 +714,15 @@ const Profile = ({ setShowProfile, onEdit })=>{
                                     children: "Name:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 72,
+                                    lineNumber: 56,
                                     columnNumber: 13
                                 }, this),
                                 " ",
-                                user ? user.displayName : "Loading..."
+                                user?.displayName || "Not Set"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 71,
+                            lineNumber: 55,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -714,15 +732,15 @@ const Profile = ({ setShowProfile, onEdit })=>{
                                     children: "Email:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 75,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this),
                                 " ",
-                                user ? user.email : "Loading..."
+                                user?.email || "Not Set"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 74,
+                            lineNumber: 58,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -732,39 +750,21 @@ const Profile = ({ setShowProfile, onEdit })=>{
                                     children: "Phone:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 62,
                                     columnNumber: 13
                                 }, this),
                                 " ",
-                                user ? user.phoneNumber : "Loading..."
+                                user?.phoneNumber || "Not Set"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 77,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                    children: "Location:"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 81,
-                                    columnNumber: 13
-                                }, this),
-                                " ",
-                                user ? user.location : "Loading..."
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 80,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 70,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -773,60 +773,36 @@ const Profile = ({ setShowProfile, onEdit })=>{
                     children: "Update Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 84,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].editButton,
-                    onClick: handleEdit,
+                    onClick: ()=>setIsEditing(true),
                     children: "Edit Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 87,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].container,
-                    children: isEditing ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$EditProfile$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        onSave: handleSave,
-                        onCancel: handleCancel
-                    }, void 0, false, {
-                        fileName: "[project]/components/Profile.jsx",
-                        lineNumber: 92,
-                        columnNumber: 13
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                children: "Profile"
-                            }, void 0, false, {
-                                fileName: "[project]/components/Profile.jsx",
-                                lineNumber: 95,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: handleEdit,
-                                children: "Edit Profile"
-                            }, void 0, false, {
-                                fileName: "[project]/components/Profile.jsx",
-                                lineNumber: 97,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true)
+                isEditing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$EditProfile$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    user: user,
+                    setUser: setUser,
+                    setIsEditing: setIsEditing
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 90,
-                    columnNumber: 9
+                    lineNumber: 73,
+                    columnNumber: 23
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/Profile.jsx",
-            lineNumber: 65,
+            lineNumber: 49,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/Profile.jsx",
-        lineNumber: 64,
+        lineNumber: 48,
         columnNumber: 5
     }, this);
 };
@@ -842,10 +818,361 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/components/MentorChat.jsx [app-client] (ecmascript)": (function(__turbopack_context__) {
+"[project]/components/MentorChat.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, e: exports, t: __turbopack_require_real__ } = __turbopack_context__;
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: __turbopack_require_stub__ } = __turbopack_context__;
 {
+__turbopack_esm__({
+    "default": (()=>ChatPanel)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module 'socket.io-client'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module 'lucide-react'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+;
+var _s = __turbopack_refresh__.signature();
+"use client";
+;
+;
+;
+const socket = io("http://localhost:5000");
+function ChatPanel({ userId }) {
+    _s();
+    const [activeChats, setActiveChats] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
+        {
+            id: 1,
+            name: "Alice Johnson",
+            profileImage: "/images/alice.jpg"
+        },
+        {
+            id: 2,
+            name: "Bob Smith",
+            profileImage: "/images/bob.jpg"
+        }
+    ]); // Sample mentors
+    const [openChat, setOpenChat] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [messages, setMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [file, setFile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [isTyping, setIsTyping] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [uploading, setUploading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ChatPanel.useEffect": ()=>{
+            if (openChat) {
+                socket.emit("joinRoom", {
+                    userId,
+                    mentorId: openChat.id
+                });
+                const messageHandler = {
+                    "ChatPanel.useEffect.messageHandler": (msg)=>setMessages({
+                            "ChatPanel.useEffect.messageHandler": (prev)=>[
+                                    ...prev,
+                                    msg
+                                ]
+                        }["ChatPanel.useEffect.messageHandler"])
+                }["ChatPanel.useEffect.messageHandler"];
+                const typingHandler = {
+                    "ChatPanel.useEffect.typingHandler": (typing)=>setIsTyping(typing)
+                }["ChatPanel.useEffect.typingHandler"];
+                socket.on("message", messageHandler);
+                socket.on("typing", typingHandler);
+                return ({
+                    "ChatPanel.useEffect": ()=>{
+                        socket.off("message", messageHandler);
+                        socket.off("typing", typingHandler);
+                    }
+                })["ChatPanel.useEffect"];
+            }
+        }
+    }["ChatPanel.useEffect"], [
+        openChat
+    ]);
+    const sendMessage = ()=>{
+        if (message.trim() !== "" && openChat) {
+            const newMessage = {
+                userId,
+                mentorId: openChat.id,
+                type: "text",
+                content: message,
+                timestamp: new Date().toLocaleTimeString()
+            };
+            socket.emit("sendMessage", newMessage);
+            setMessages((prev)=>[
+                    ...prev,
+                    newMessage
+                ]);
+            setMessage("");
+        }
+    };
+    const handleTyping = ()=>{
+        if (openChat) {
+            socket.emit("typing", {
+                userId,
+                mentorId: openChat.id
+            });
+        }
+    };
+    const uploadFile = async ()=>{
+        if (!file || !openChat) return;
+        setUploading(true);
+        const formData = new FormData();
+        formData.append("attachment", file);
+        formData.append("userId", userId);
+        try {
+            const res = await fetch("http://localhost:5000/uploadAttachment", {
+                method: "POST",
+                body: formData
+            });
+            if (!res.ok) throw new Error("Upload failed");
+            const data = await res.json();
+            const fileMessage = {
+                userId,
+                mentorId: openChat.id,
+                type: "file",
+                content: data.url,
+                timestamp: new Date().toLocaleTimeString()
+            };
+            socket.emit("sendMessage", fileMessage);
+            setMessages((prev)=>[
+                    ...prev,
+                    fileMessage
+                ]);
+            setFile(null);
+        } catch (error) {
+            console.error("Upload error:", error);
+        } finally{
+            setUploading(false);
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "fixed bottom-0 px-2 py-2 right-4 flex flex-col items-end z-50",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col bg-white mt-2 shadow-lg rounded-lg p-3",
+                children: activeChats.map((chat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        onClick: ()=>setOpenChat(chat),
+                        className: "flex items-center mt-3 bg-yellow-600 p-2 cursor-pointer hover:bg-yellow-700 rounded-lg",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                src: chat.profileImage,
+                                alt: chat.name,
+                                className: "w-10 h-10 rounded-full"
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 103,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "ml-3 font-medium",
+                                children: chat.name
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 104,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, chat.id, true, {
+                        fileName: "[project]/components/MentorChat.jsx",
+                        lineNumber: 98,
+                        columnNumber: 11
+                    }, this))
+            }, void 0, false, {
+                fileName: "[project]/components/MentorChat.jsx",
+                lineNumber: 96,
+                columnNumber: 7
+            }, this),
+            openChat && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "w-80 bg-white shadow-xl rounded-lg fixed bottom-16 right-4 border",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "p-3 bg-yellow-500 rounded-lg text-white flex justify-between items-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "font-bold",
+                                children: openChat.name
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 113,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>setOpenChat(null),
+                                className: "text-white",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(X, {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/components/MentorChat.jsx",
+                                    lineNumber: 115,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 114,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/MentorChat.jsx",
+                        lineNumber: 112,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "p-3 h-64 overflow-y-auto",
+                        children: [
+                            messages.map((msg, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: `p-2 my-2 ${msg.userId === userId ? "text-right" : "text-left"}`,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: `inline-block p-2 rounded-lg ${msg.userId === userId ? "bg-yellow-500 text-white" : "bg-yellow-500 text-white"}`,
+                                            children: msg.type === "text" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: msg.content
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/MentorChat.jsx",
+                                                lineNumber: 124,
+                                                columnNumber: 21
+                                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: msg.content,
+                                                target: "_blank",
+                                                rel: "noopener noreferrer",
+                                                className: "underline",
+                                                children: [
+                                                    "📎 ",
+                                                    file?.name || "View Attachment"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/MentorChat.jsx",
+                                                lineNumber: 126,
+                                                columnNumber: 21
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/MentorChat.jsx",
+                                            lineNumber: 122,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-xs text-gray-500 mt-1",
+                                            children: msg.timestamp
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/MentorChat.jsx",
+                                            lineNumber: 131,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, index, true, {
+                                    fileName: "[project]/components/MentorChat.jsx",
+                                    lineNumber: 121,
+                                    columnNumber: 15
+                                }, this)),
+                            isTyping && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-gray-400 text-sm",
+                                children: "Mentor is typing..."
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 134,
+                                columnNumber: 26
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/MentorChat.jsx",
+                        lineNumber: 119,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "p-3 border-t text-white flex items-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                type: "text",
+                                value: message,
+                                onChange: (e)=>setMessage(e.target.value),
+                                onKeyPress: handleTyping,
+                                placeholder: "Type a message...",
+                                className: "flex-grow bg-yellow-500 text-white p-2 border rounded-lg"
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 138,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: sendMessage,
+                                className: "ml-2 p-2 bg-yellow-500 text-white rounded-lg",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Send, {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/components/MentorChat.jsx",
+                                    lineNumber: 147,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 146,
+                                columnNumber: 13
+                            }, this),
+                            !file ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                htmlFor: "fileUpload",
+                                className: "ml-2 p-2 bg-yellow-500 rounded-lg cursor-pointer",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Paperclip, {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/components/MentorChat.jsx",
+                                    lineNumber: 151,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 150,
+                                columnNumber: 15
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: uploadFile,
+                                className: "ml-2 p-2 bg-yellow-500 text-white rounded-lg",
+                                disabled: uploading,
+                                children: uploading ? "Uploading..." : "Upload"
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 154,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                type: "file",
+                                className: "hidden",
+                                id: "fileUpload",
+                                onChange: (e)=>setFile(e.target.files[0])
+                            }, void 0, false, {
+                                fileName: "[project]/components/MentorChat.jsx",
+                                lineNumber: 162,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/MentorChat.jsx",
+                        lineNumber: 137,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/MentorChat.jsx",
+                lineNumber: 111,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/MentorChat.jsx",
+        lineNumber: 94,
+        columnNumber: 5
+    }, this);
+}
+_s(ChatPanel, "KhlU1bNXBnrAB1mJCOHZoQC4ry4=");
+_c = ChatPanel;
+var _c;
+__turbopack_refresh__.register(_c, "ChatPanel");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
 }
