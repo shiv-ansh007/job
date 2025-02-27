@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import { userId } from "firebase/auth";
 import { getAuth, updateProfile } from "firebase/auth";
-import styles from "./Profile.module.css";
-import EditProfile from "./EditProfile";
+
 import PropTypes from "prop-types";
 
 import { db } from "../firebase"; // Import Firestore
