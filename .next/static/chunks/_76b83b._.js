@@ -617,73 +617,65 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
-const Profile = ({ setShowProfile, onEdit })=>{
+const Profile = ({ setShowProfile })=>{
     _s();
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isEditing, setIsEditing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Profile.useEffect": ()=>{
-            const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
             const currentUser = auth.currentUser;
-            setUser(auth.currentUser);
+            if (currentUser) {
+                setUser(currentUser);
+            }
         }
-    }["Profile.useEffect"], [
-        user
-    ]); // Re-run when `user` changes
-    const onClick = ()=>{
+    }["Profile.useEffect"], []); // Runs only once when the component mounts
+    const handleCloseProfile = ()=>{
         setShowProfile((prev)=>!prev);
     };
-    const handleUpdateProfile = ()=>{
-        if (user) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__ak__as__updateProfile$3e$__["updateProfile"])(user, {
-                displayName: "New Display Name"
-            }).then(()=>{
-                console.log("Profile updated successfully");
-                const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
-                setUser(auth.currentUser);
-                return user.reload();
-            }).then(()=>{
-                const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__o__as__getAuth$3e$__["getAuth"])();
-                setUser(auth.currentUser); // Update state with new data
-            }).catch((error)=>{
-                console.error("Error updating profile:", error);
-            });
-        } else {
+    const handleUpdateProfile = async ()=>{
+        if (!user) {
             console.log("No user is signed in.");
+            return;
         }
-    };
-    const handleEdit = ()=>{
-        setIsEditing(true);
-    };
-    const handleSave = ()=>{
-        setIsEditing(false);
-    // Optionally, refresh user data
-    };
-    const handleCancel = ()=>{
-        setIsEditing(false);
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$dfc2d82f$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__ak__as__updateProfile$3e$__["updateProfile"])(user, {
+                displayName: user.displayName || "User Name",
+                phoneNumber: user.phoneNumber || "",
+                photoURL: user.photoURL || ""
+            });
+            // Reload user data
+            await auth.currentUser.reload();
+            setUser({
+                ...auth.currentUser
+            }); // Update state with new user data
+            console.log("Profile updated successfully");
+        } catch (error) {
+            console.error("Error updating profile:", error);
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].profileOverlay,
-        onClick: onClick,
+        onClick: handleCloseProfile,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].profileContainer,
             onClick: (e)=>e.stopPropagation(),
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].closeButton,
-                    onClick: onClick,
+                    onClick: handleCloseProfile,
                     children: "✖"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 66,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                    className: "text-3xl font-bold z-index:99 text-center",
+                    className: "text-3xl font-bold text-center",
                     children: "Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 69,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -696,15 +688,15 @@ const Profile = ({ setShowProfile, onEdit })=>{
                                     children: "Name:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 72,
+                                    lineNumber: 56,
                                     columnNumber: 13
                                 }, this),
                                 " ",
-                                user ? user.displayName : "Loading..."
+                                user?.displayName || "Not Set"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 71,
+                            lineNumber: 55,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -714,15 +706,15 @@ const Profile = ({ setShowProfile, onEdit })=>{
                                     children: "Email:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 75,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this),
                                 " ",
-                                user ? user.email : "Loading..."
+                                user?.email || "Not Set"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 74,
+                            lineNumber: 58,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -732,39 +724,21 @@ const Profile = ({ setShowProfile, onEdit })=>{
                                     children: "Phone:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 62,
                                     columnNumber: 13
                                 }, this),
                                 " ",
-                                user ? user.phoneNumber : "Loading..."
+                                user?.phoneNumber || "Not Set"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 77,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                    children: "Location:"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/Profile.jsx",
-                                    lineNumber: 81,
-                                    columnNumber: 13
-                                }, this),
-                                " ",
-                                user ? user.location : "Loading..."
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/components/Profile.jsx",
-                            lineNumber: 80,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 70,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -773,60 +747,36 @@ const Profile = ({ setShowProfile, onEdit })=>{
                     children: "Update Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 84,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].editButton,
-                    onClick: handleEdit,
+                    onClick: ()=>setIsEditing(true),
                     children: "Edit Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 87,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Profile$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].container,
-                    children: isEditing ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$EditProfile$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        onSave: handleSave,
-                        onCancel: handleCancel
-                    }, void 0, false, {
-                        fileName: "[project]/components/Profile.jsx",
-                        lineNumber: 92,
-                        columnNumber: 13
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                children: "Profile"
-                            }, void 0, false, {
-                                fileName: "[project]/components/Profile.jsx",
-                                lineNumber: 95,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: handleEdit,
-                                children: "Edit Profile"
-                            }, void 0, false, {
-                                fileName: "[project]/components/Profile.jsx",
-                                lineNumber: 97,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true)
+                isEditing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$EditProfile$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    user: user,
+                    setUser: setUser,
+                    setIsEditing: setIsEditing
                 }, void 0, false, {
                     fileName: "[project]/components/Profile.jsx",
-                    lineNumber: 90,
-                    columnNumber: 9
+                    lineNumber: 73,
+                    columnNumber: 23
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/Profile.jsx",
-            lineNumber: 65,
+            lineNumber: 49,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/Profile.jsx",
-        lineNumber: 64,
+        lineNumber: 48,
         columnNumber: 5
     }, this);
 };
