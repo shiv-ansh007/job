@@ -25,7 +25,7 @@ export default function Home({ children }) {
         <LandingPage />
         {children}
         <Footer />
-        {/* ✅ Add the chatbot here */}
+        {/*  Add the chatbot here */}
       </AuthProvider>
     </>
   );
