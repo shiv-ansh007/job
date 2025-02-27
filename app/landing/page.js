@@ -1,4 +1,4 @@
- 'use client';
+'use client';
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
@@ -19,6 +19,10 @@ const InternshipList = () => {
       .then((data) => setInternships(data))
       .catch((err) => console.error("❌ Fetch Error:", err));
   }, [query]);
+  const [currentUser, setCurrentUser] = useState(null);
+  useEffect(() => {
+    console.log(currentUser); // Now it will work fine
+  }, []); 
 
   return (
     <>

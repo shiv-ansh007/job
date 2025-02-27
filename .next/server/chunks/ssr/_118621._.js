@@ -405,6 +405,31 @@ const EditProfile = ()=>{
         const value = Array.from(e.target.selectedOptions, (option)=>option.value);
         setSkills(value);
     };
+    const EditProfile = ({ onProfileUpdate: onProfileUpdate1 })=>{
+        const handleSubmit = async (e)=>{
+            e.preventDefault();
+            const user = auth.currentUser;
+            if (user) {
+                let resumeURL = userData.resume;
+                if (resumeFile) {
+                    const resumeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ref"])(storage, `resumes/${user.uid}`);
+                    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["uploadBytes"])(resumeRef, resumeFile);
+                    resumeURL = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDownloadURL"])(resumeRef);
+                }
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["doc"])(db, "users", user.uid), {
+                    displayName: userData.displayName,
+                    email: userData.email,
+                    phoneNumber: userData.phoneNumber,
+                    location: userData.location,
+                    resume: resumeURL,
+                    skills: skills,
+                    experience: experience
+                });
+                alert("Profile updated successfully!");
+                onProfileUpdate1(); // Notify parent component
+            }
+        };
+    };
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const user = auth.currentUser;
@@ -425,6 +450,7 @@ const EditProfile = ()=>{
                 experience: experience
             });
             alert("Profile updated successfully!");
+            onProfileUpdate();
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -442,7 +468,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 73,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -456,7 +482,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 80,
+                lineNumber: 108,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -470,7 +496,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 87,
+                lineNumber: 115,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -484,7 +510,7 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 94,
+                lineNumber: 122,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -493,11 +519,11 @@ const EditProfile = ()=>{
                 className: "rounded-lg mb-2 px-2 py-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 101,
+                lineNumber: 129,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                className: "w-full  rounded-lg  px-2 py-2",
+                className: "w-full no-scrollbar  rounded-lg  px-2 py-2",
                 multiple: true,
                 onChange: handleSkillsChange,
                 children: [
@@ -506,7 +532,7 @@ const EditProfile = ()=>{
                         children: "JavaScript"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 105,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -514,7 +540,7 @@ const EditProfile = ()=>{
                         children: "Python"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 106,
+                        lineNumber: 134,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -522,7 +548,7 @@ const EditProfile = ()=>{
                         children: "AI"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 107,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -530,23 +556,23 @@ const EditProfile = ()=>{
                         children: "ML"
                     }, void 0, false, {
                         fileName: "[project]/components/EditProfile.jsx",
-                        lineNumber: 108,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 104,
+                lineNumber: 132,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                 value: experience,
                 onChange: (e)=>setExperience(e.target.value),
-                className: "rounded-lg mb-2 px-3 mt-4 py-3 h-40 w-full ",
+                className: "rounded-lg mb-2  px-3 mt-4 py-3 h-40 w-full ",
                 placeholder: "Experience"
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 111,
+                lineNumber: 139,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -557,18 +583,18 @@ const EditProfile = ()=>{
                     children: "Update Profile"
                 }, void 0, false, {
                     fileName: "[project]/components/EditProfile.jsx",
-                    lineNumber: 118,
+                    lineNumber: 146,
                     columnNumber: 7
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/EditProfile.jsx",
-                lineNumber: 117,
+                lineNumber: 145,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/EditProfile.jsx",
-        lineNumber: 71,
+        lineNumber: 99,
         columnNumber: 5
     }, this);
 };
@@ -842,7 +868,7 @@ const InternshipList = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                         className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6",
                         children: internships.length > 0 ? internships.map((intern, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                className: "p-6 bg-white rounded-lg shadow-md border border-yellow-600  hover:shadow-xl hover:bg-yellow-200 hover:scale-105 hover:text-yellow-800  transition duration-300 transform",
+                                className: "p-6 bg-white rounded-lg shadow-md border border-yellow-600    hover:shadow-xl hover:bg-yellow-200 hover:scale-105 hover:text-yellow-800    transition duration-300 transform",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                         className: "text-xl font-semibold",

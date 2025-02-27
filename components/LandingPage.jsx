@@ -20,6 +20,10 @@ const Home = () => {
   const [expandedFeature, setExpandedFeature] = useState(null);
   const [activeFeature, setActiveFeature] = useState(null); // State to track active feature
   const [activeTab, setActiveTab] = useState("Why Choose Us?"); // State to track active tab
+  const [currentUser, setCurrentUser] = useState(null);
+  useEffect(() => {
+    console.log(currentUser); // Now it will work fine
+  }, []); 
 
   
 
@@ -49,11 +53,12 @@ if(user)
     };
 
   }
-      setUser(currentUser);
-      setLoading(false);
-    return () => unsubscribe();
-  }, [user]);
-
+  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+    setLoading(false);
+  });
+  return () => unsubscribe();
+  }, [user]);
   const handleLogout = async () => {
     await signOut(auth);
     setIsProfileOpen(false);
