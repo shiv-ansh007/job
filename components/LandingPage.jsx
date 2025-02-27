@@ -49,10 +49,12 @@ if(user)
     };
 
   }
-      setUser(currentUser);
-      setLoading(false);
-    return () => unsubscribe();
-  }, [user]);
+  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+    setLoading(false);
+  });
+  return () => unsubscribe();
+  }, [user]);
 
   const handleLogout = async () => {
     await signOut(auth);

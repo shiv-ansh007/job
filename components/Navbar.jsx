@@ -116,7 +116,7 @@ const Navbar = ({ showProfile, setShowProfile }) => {
             </li>
             <li>
               <Link
-                href="/intership"
+                href="/internships"
                 className="block gap-x-6 rounded-md px-4 py-2 text-black/60 hover:text-black hover:bg-gray-200 transition duration-300"
               >
                 Internships
